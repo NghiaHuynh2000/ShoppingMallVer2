@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zing.zalo.zalosdk:auth:2.4.1030@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/986a71e58d3abcda31a6f02dd56bd480/jetified-auth-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/986a71e58d3abcda31a6f02dd56bd480/jetified-auth-2.4.1030/res" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/986a71e58d3abcda31a6f02dd56bd480/jetified-auth-2.4.1030/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/986a71e58d3abcda31a6f02dd56bd480/jetified-auth-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/986a71e58d3abcda31a6f02dd56bd480/jetified-auth-2.4.1030/res" />
+      <root url="file://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/986a71e58d3abcda31a6f02dd56bd480/jetified-auth-2.4.1030/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d77790ef39f04655ef54d352e8728e00/jetified-auth-2.4.1030/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d77790ef39f04655ef54d352e8728e00/jetified-auth-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d77790ef39f04655ef54d352e8728e00/jetified-auth-2.4.1030/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc1273bb0f9a6c992811902b92943ec1/jetified-auth-2.4.1030/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc1273bb0f9a6c992811902b92943ec1/jetified-auth-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc1273bb0f9a6c992811902b92943ec1/jetified-auth-2.4.1030/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/auth/2.4.1030/ca7cf99954501aaf3212e9dd7d444e739dfd1a63/auth-2.4.1030-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/auth/2.4.1030/ca7cf99954501aaf3212e9dd7d444e739dfd1a63/auth-2.4.1030-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/auth/2.4.1030/ca7cf99954501aaf3212e9dd7d444e739dfd1a63/auth-2.4.1030-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/auth/2.4.1030/53c65a31c51d5d5c2205bd1f3359aa2e9295bb0b/auth-2.4.1030-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/auth/2.4.1030/53c65a31c51d5d5c2205bd1f3359aa2e9295bb0b/auth-2.4.1030-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/auth/2.4.1030/53c65a31c51d5d5c2205bd1f3359aa2e9295bb0b/auth-2.4.1030-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

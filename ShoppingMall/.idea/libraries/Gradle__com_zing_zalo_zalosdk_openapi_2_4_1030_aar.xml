@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zing.zalo.zalosdk:openapi:2.4.1030@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/1a6f289c7383215eda68c0266d47cb41/jetified-openapi-2.4.1030/res" />
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/a77e5ae16a4d99a0b019d40f78c341c3/jetified-openapi-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/a77e5ae16a4d99a0b019d40f78c341c3/jetified-openapi-2.4.1030/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/a77e5ae16a4d99a0b019d40f78c341c3/jetified-openapi-2.4.1030/res" />
+      <root url="jar://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/a77e5ae16a4d99a0b019d40f78c341c3/jetified-openapi-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/a77e5ae16a4d99a0b019d40f78c341c3/jetified-openapi-2.4.1030/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/a77e5ae16a4d99a0b019d40f78c341c3/jetified-openapi-2.4.1030/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1023a91b546504fa34871b22a536fa3d/jetified-openapi-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1023a91b546504fa34871b22a536fa3d/jetified-openapi-2.4.1030/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1023a91b546504fa34871b22a536fa3d/jetified-openapi-2.4.1030/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8ea6a9eb35ae44c908314dc6020d006/jetified-openapi-2.4.1030/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8ea6a9eb35ae44c908314dc6020d006/jetified-openapi-2.4.1030/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8ea6a9eb35ae44c908314dc6020d006/jetified-openapi-2.4.1030/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/openapi/2.4.1030/4131f561a99695c5ae4a8eb453c7d968e45b5a41/openapi-2.4.1030-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/openapi/2.4.1030/4131f561a99695c5ae4a8eb453c7d968e45b5a41/openapi-2.4.1030-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/openapi/2.4.1030/4131f561a99695c5ae4a8eb453c7d968e45b5a41/openapi-2.4.1030-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/openapi/2.4.1030/dbb615105b7ec0a504034521c3b093e719c6f105/openapi-2.4.1030-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/openapi/2.4.1030/dbb615105b7ec0a504034521c3b093e719c6f105/openapi-2.4.1030-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zing.zalo.zalosdk/openapi/2.4.1030/dbb615105b7ec0a504034521c3b093e719c6f105/openapi-2.4.1030-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

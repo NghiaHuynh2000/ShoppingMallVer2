@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-measurement-sdk-api:18.0.0@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/3f57f889ec434a16c4d4f035aded66f6/jetified-play-services-measurement-sdk-api-18.0.0/res" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/res" />
+      <root url="jar://$USER_HOME$/Downloads/Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6077b58d703761b2eb32ea5f1bd38363/jetified-play-services-measurement-sdk-api-18.0.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.google.android.gms/play-services-measurement-sdk-api/18.0.0/6a8b08d2a93001c8d089863beda57683994fb63d/play-services-measurement-sdk-api-18.0.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/modules-2/files-2.1/com.google.android.gms/play-services-measurement-sdk-api/18.0.0/6a8b08d2a93001c8d089863beda57683994fb63d/play-services-measurement-sdk-api-18.0.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-measurement-sdk-api/18.0.0/6a8b08d2a93001c8d089863beda57683994fb63d/play-services-measurement-sdk-api-18.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

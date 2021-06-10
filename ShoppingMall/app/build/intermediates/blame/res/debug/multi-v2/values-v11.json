@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-2\\files-2.1\\fc1273bb0f9a6c992811902b92943ec1\\jetified-auth-2.4.1030\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,109",
+                        "endLines": "2,5",
+                        "endColumns": "53,12",
+                        "endOffsets": "104,241"
+                    }
+                }
+            ]
+        }
+    ]
+}

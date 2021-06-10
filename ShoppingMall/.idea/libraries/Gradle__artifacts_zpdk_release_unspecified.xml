@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:zpdk-release:unspecified">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/a71adb2ccda7d07c38b89d91a19a7967/jetified-zpdk-release/res" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/9494949875b536b6345142032c4a387c/jetified-zpdk-release/res" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/d146f047c16ebae12adb27d9541f02f9/jetified-zpdk-release/res" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/80127469479a6972dfd67ea7564f90a0/jetified-zpdk-release/res" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/e0be6124caec336aa9f6f5c17a206305/jetified-zpdk-release/res" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/3061c610abdf3c1f91e8e51c465b2955/jetified-zpdk-release/res" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/623b7a2b7afe0205af3d575231f96f8f/jetified-zpdk-release/res" />
+      <root url="jar://$PROJECT_DIR$/zpdk-release/build/.transforms/4d5d2194622b82df7928ca3c12c8fbba/jetified-zpdk-release/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/4d5d2194622b82df7928ca3c12c8fbba/jetified-zpdk-release/res" />
+      <root url="file://$PROJECT_DIR$/zpdk-release/build/.transforms/4d5d2194622b82df7928ca3c12c8fbba/jetified-zpdk-release/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

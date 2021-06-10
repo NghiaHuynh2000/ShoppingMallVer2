@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="lbl_sotien">Số Tiền</string>
+    <string name="lbl_donhang">DEMO</string>
+    <string name="btn_create_order">Tạo Đơn Hàng</string>
+    <string name="txt_amount_init">50000</string>
+    <string name="txt_amount_hint">50000</string>
+    <string name="btn_pay">Thanh Toán</string>
+    <string name="lbl_zptranstoken">zptranstoken</string>
+    <string name="to_webview">To WebView</string>
+    <string name="app_name">FASHION SHOP</string>
+    <string name="register">ĐĂNG KÝ</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="Dangky">Bạn chưa có tài khoản? Đăng ký ngay</string>
+    <string name="Login">Click to sign in with google account</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="price">Giá</string>
+    <string name="login_with_zalo">Login with Zalo</string>
+    <string name="appID">1829577289837795818</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

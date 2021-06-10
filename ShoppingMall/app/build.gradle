@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.TQH.FASTSTORE"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation project(path: ':zpdk-release')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation("com.squareup.okhttp3:okhttp:4.6.0")
+    implementation("commons-codec:commons-codec:1.14")
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation 'com.squareup.picasso:picasso:2.3.3'
+
+    implementation "com.zing.zalo.zalosdk:core:2.4.1030"
+    implementation "com.zing.zalo.zalosdk:auth:2.4.1030"
+    implementation "com.zing.zalo.zalosdk:openapi:2.4.1030"
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    apply plugin: 'com.android.application'
+
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+
+    implementation "com.quickblox:quickblox-android-sdk-core:3.3.0"
+    implementation "com.quickblox:quickblox-android-sdk-chat:3.3.0"
+    implementation "com.amulyakhare:com.amulyakhare.textdrawable:1.0.1"
+    implementation "com.github.lguipeng:BubbleView:1.0.1"
+
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+}

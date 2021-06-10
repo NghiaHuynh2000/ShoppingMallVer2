@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="hcmute.edu.vn.mssv18110326.Activity.CartFragment"
+android:orientation="vertical"
+android:weightSum="10">
+
+<LinearLayout
+    android:id="@+id/ly2"
+    android:layout_weight="8"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+    </FrameLayout>
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            app:lottie_repeatCount="200000"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/emptycart"
+            tools:layout_editor_absoluteX="65dp"
+            tools:layout_editor_absoluteY="215dp"
+            android:layout_gravity="center">
+
+        </com.airbnb.lottie.LottieAnimationView>
+    </LinearLayout>
+<LinearLayout
+    android:id="@+id/ly1"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Tổng tiền: "
+            android:textSize="30sp"
+            android:textColor="#F44336"
+            android:textStyle="bold">
+
+        </TextView>
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="12dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:text="100000VND"
+
+            android:textSize="30sp">
+
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/btn"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/payment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_payment"
+        android:text="Thanh toán"
+        android:textColor="#FDFDFD"
+        android:textStyle="bold"
+        android:textSize="20sp" />
+</LinearLayout>
+</LinearLayout>
+
+

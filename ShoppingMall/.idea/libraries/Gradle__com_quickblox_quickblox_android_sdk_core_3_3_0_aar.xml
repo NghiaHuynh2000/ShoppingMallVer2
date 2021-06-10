@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.quickblox:quickblox-android-sdk-core:3.3.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/res" />
+      <root url="file://$PROJECT_DIR$/../../MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Downloads/Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/MaterialLoginPage-master/.gradle/5.4.1/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6f618add9115ed653bec787a3a0e6659/jetified-quickblox-android-sdk-core-3.3.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="General">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:title="Home" />
+            <item
+                android:id="@+id/cart"
+                android:title="Cart" />
+            <item
+                android:id="@+id/profile"
+                android:title="Profile" />
+            <item
+                android:id="@+id/login"
+                android:title="Login" />
+            <item
+                android:id="@+id/logout"
+                android:title="logout" />
+        </menu>
+    </item>
+
+    <item android:title="Category">
+        <menu>
+            <item
+                android:id="@+id/ssd"
+                android:title="SDD" />
+            <item
+                android:id="@+id/hdd"
+                android:title="HDD" />
+        </menu>
+    </item>
+</menu>
