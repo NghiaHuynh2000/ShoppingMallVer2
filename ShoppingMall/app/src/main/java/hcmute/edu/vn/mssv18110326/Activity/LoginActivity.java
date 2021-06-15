@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import hcmute.edu.vn.mssv18110326.DAO.CartDAO;
 import hcmute.edu.vn.mssv18110326.DAO.UsersDAO;
 import hcmute.edu.vn.mssv18110326.Data.DatabaseManager;
 import hcmute.edu.vn.mssv18110326.Model.Users;
@@ -22,7 +23,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private  Button sign_in_button;
     public String name;
     DatabaseManager db = new DatabaseManager(LoginActivity.this);
+    CartDAO cartDAO=new CartDAO(db);
     private UsersDAO user = new UsersDAO(db);
 
     GoogleSignInClient mGoogleSignInClient;
@@ -78,6 +79,8 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("user_email", name);
                     editor.apply();
                     Login();
+                    MainActivity.cart_main=cartDAO.GetCart(name);
+ //                   int a=1;
                     //db.AddProduct();
                 }
                 else

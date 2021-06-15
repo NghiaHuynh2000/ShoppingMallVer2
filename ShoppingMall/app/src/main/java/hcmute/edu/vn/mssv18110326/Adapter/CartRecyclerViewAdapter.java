@@ -1,7 +1,10 @@
 package hcmute.edu.vn.mssv18110326.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import hcmute.edu.vn.mssv18110326.Activity.CartFragment;
 import hcmute.edu.vn.mssv18110326.Activity.DetailsActivity;
 import hcmute.edu.vn.mssv18110326.Activity.MainActivity;
+import hcmute.edu.vn.mssv18110326.Activity.PaymentActivity;
+import hcmute.edu.vn.mssv18110326.DAO.CartDAO;
 import hcmute.edu.vn.mssv18110326.Data.DatabaseManager;
 import hcmute.edu.vn.mssv18110326.Model.Cart;
 import hcmute.edu.vn.mssv18110326.R;
@@ -31,11 +36,14 @@ public class CartRecyclerViewAdapter  extends  RecyclerView.Adapter<CartRecycler
     private ArrayList<Cart> cart;
     Button home,payment;
     Context context;
-    DatabaseManager db=new DatabaseManager(context);
+    DatabaseManager db;
+    CartDAO cartDAO;
 
     public CartRecyclerViewAdapter(Context mContex, ArrayList<Cart> cart) {
         this.mContex = mContex;
         this.cart = cart;
+        db=new DatabaseManager(mContex);
+        cartDAO=new CartDAO(db);
         notifyDataSetChanged();
     }
 
@@ -61,7 +69,8 @@ public class CartRecyclerViewAdapter  extends  RecyclerView.Adapter<CartRecycler
     public void onBindViewHolder(@NonNull final myViewHolder holder, final int position) {
 
         final int id = cart.get(position).getId();
-        final String price = "Giá: " +cart.get(position).getPrice() + "VND";
+        DecimalFormat decimalFormatItem = new DecimalFormat("###,###,###");
+        final String price = "Giá: " + decimalFormatItem.format(cart.get(position).getPrice()) + " VND";
         holder.name.setText(cart.get(position).getName());
 
         holder.price.setText(price);
@@ -73,7 +82,14 @@ public class CartRecyclerViewAdapter  extends  RecyclerView.Adapter<CartRecycler
             public void onClick(View v) {
                 if(MainActivity.cart_main.get(position).getQty() - 1!=0) {
                     MainActivity.cart_main.get(position).setQty(MainActivity.cart_main.get(position).getQty() - 1);
+                    CartFragment.Total-=MainActivity.cart_main.get(position).getPrice();
+                    DecimalFormat decimalFormat = new DecimalFormat(" ###,###,###");
+                    CartFragment.txtTotal.setText(decimalFormat.format(CartFragment.Total) + " VND");
+ //                   PaymentActivity.txvTotalPrice.setText(decimalFormat.format(CartFragment.Total) + " VND");
                     notifyDataSetChanged();
+
+                    String email=GetSessionUser();
+                    cartDAO.UpdateCart(email,MainActivity.cart_main.get(position).getId(),MainActivity.cart_main.get(position).getColor(),MainActivity.cart_main.get(position).getSize(),MainActivity.cart_main.get(position).getQty());
 //                    DetailsActivity detailsActivity=new DetailsActivity();
 //                    detailsActivity.Restart();
                 }
@@ -84,15 +100,26 @@ public class CartRecyclerViewAdapter  extends  RecyclerView.Adapter<CartRecycler
             @Override
             public void onClick(View v) {
                 MainActivity.cart_main.get(position).setQty(MainActivity.cart_main.get(position).getQty() + 1);
+                CartFragment.Total+=MainActivity.cart_main.get(position).getPrice();
+                DecimalFormat decimalFormat = new DecimalFormat(" ###,###,###");
+                CartFragment.txtTotal.setText(decimalFormat.format(CartFragment.Total) + " VND");
+//                PaymentActivity.txvTotalPrice.setText(decimalFormat.format(CartFragment.Total) + " VND");
                 notifyDataSetChanged();
+
+                String email=GetSessionUser();
+                cartDAO.UpdateCart(email,MainActivity.cart_main.get(position).getId(),MainActivity.cart_main.get(position).getColor(),MainActivity.cart_main.get(position).getSize(),MainActivity.cart_main.get(position).getQty());
 //                holder.total.
 //                DetailsActivity detailsActivity=new DetailsActivity();
 //                detailsActivity.Restart();
             }
         });
-        String img = cart.get(position).getImage();
+/*        String img = cart.get(position).getImage();
         int resourceId = mContex.getResources().getIdentifier(img, "drawable", mContex.getPackageName() );
-        holder.imageView.setImageResource( resourceId );
+        holder.imageView.setImageResource( resourceId );*/
+
+        Bitmap bitmap= BitmapFactory.decodeByteArray(cart.get(position).getImage(),0,cart.get(position).getImage().length);
+        holder.imageView.setImageBitmap(bitmap);
+
         String qty = String.valueOf(cart.get(position).getQty());
      holder.solong.setText(qty);
     }
@@ -128,4 +155,10 @@ public class CartRecyclerViewAdapter  extends  RecyclerView.Adapter<CartRecycler
         public ImageView getImage(){ return this.imageView;}
     }
 
+    public String GetSessionUser(){
+
+        SharedPreferences sharedPreferences = mContex.getSharedPreferences("user_check", Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString("user_email","");
+        return name;
+    }
 }

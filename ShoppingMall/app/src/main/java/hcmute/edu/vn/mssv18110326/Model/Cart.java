@@ -4,7 +4,7 @@ public class Cart {
     private   int id;
     private String name;
     private int price;
-    private String image;
+    private byte[] image;
     private String color;
     private String size;
     private int qty;
@@ -13,7 +13,7 @@ public class Cart {
 
     }
 
-    public Cart(int id, String name, int price, String image, String color, String size, int qty) {
+    public Cart(int id, String name, int price, byte[] image, String color, String size, int qty) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -47,11 +47,11 @@ public class Cart {
         this.price = price;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

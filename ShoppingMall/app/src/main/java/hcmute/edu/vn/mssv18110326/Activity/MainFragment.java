@@ -60,7 +60,7 @@ public class MainFragment extends Fragment {
                 Cursor cursor = new DatabaseManager(getContext()).getSearchProducts(search);
                 if (cursor != null && cursor.moveToFirst()) {
                     do{
-                        Product product = new Product(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4), cursor.getInt(5), cursor.getString(6));
+                        Product product = new Product(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getBlob(3), cursor.getInt(4), cursor.getString(5));
                         productsList.add(product);
                     }while(cursor.moveToNext());
                 }
@@ -87,7 +87,7 @@ public class MainFragment extends Fragment {
         Cursor cursor = new DatabaseManager(getContext()).getAllProducts();
         if (cursor != null && cursor.moveToFirst()) {
             do{
-                Product product = new Product(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4), cursor.getInt(5), cursor.getString(6));
+                Product product = new Product(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getBlob(3), cursor.getInt(4), cursor.getString(5));
                 productsList.add(product);
             }while(cursor.moveToNext());
         }

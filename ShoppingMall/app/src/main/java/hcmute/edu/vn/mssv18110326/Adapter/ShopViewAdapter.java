@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 
-import hcmute.edu.vn.mssv18110326.Activity.HDDFragment;
-import hcmute.edu.vn.mssv18110326.Activity.SSDFragment;
+import hcmute.edu.vn.mssv18110326.Activity.QuanFragment;
+import hcmute.edu.vn.mssv18110326.Activity.AoFragment;
 
 
 public class ShopViewAdapter extends FragmentStatePagerAdapter {
@@ -21,12 +21,12 @@ public class ShopViewAdapter extends FragmentStatePagerAdapter {
     {
         switch (position){
             case 0:
-                return new SSDFragment();
+                return new AoFragment();
             case 1:
-                return new HDDFragment();
+                return new QuanFragment();
 
             default:
-                return new SSDFragment();
+                return new AoFragment();
         }
         //return  null;
     }

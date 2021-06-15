@@ -11,6 +11,7 @@ import android.os.Bundle;
 
 
 import hcmute.edu.vn.mssv18110326.Adapter.BillDetailsAdapter;
+import hcmute.edu.vn.mssv18110326.DAO.CartDAO;
 import hcmute.edu.vn.mssv18110326.Data.DatabaseManager;
 import hcmute.edu.vn.mssv18110326.Model.BillDetails;
 import hcmute.edu.vn.mssv18110326.R;
@@ -24,6 +25,7 @@ public class BillDetaiilsActivity extends AppCompatActivity {
     Context context;
     private ArrayList<BillDetails> BillDetailsList;
     DatabaseManager db = new DatabaseManager(this);
+    CartDAO cartDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +39,11 @@ public class BillDetaiilsActivity extends AppCompatActivity {
 
         Cursor cursor = new DatabaseManager(getApplicationContext()).GetDetailsBill(id);
 
+        cartDAO = new CartDAO(db);
+
         if (cursor != null & cursor.moveToFirst()){
             do {
-                BillDetails billDetails = new BillDetails(cursor.getInt(0),cursor.getInt(1),cursor.getString(2),cursor.getString(3),cursor.getInt(4),cursor.getString(5));
+                BillDetails billDetails = new BillDetails(cursor.getInt(0),cursor.getInt(1),cursor.getString(2),cursor.getString(3),cursor.getInt(4),cursor.getBlob(5), cartDAO.Get_NameColor(cursor.getInt(6)),cartDAO.Get_NameSize(cursor.getInt(7)));
                 BillDetailsList.add(billDetails);
             }
             while (cursor.moveToNext());

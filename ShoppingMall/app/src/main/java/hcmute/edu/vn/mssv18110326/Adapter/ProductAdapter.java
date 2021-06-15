@@ -2,6 +2,8 @@ package hcmute.edu.vn.mssv18110326.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import hcmute.edu.vn.mssv18110326.Activity.DetailsActivity;
 import hcmute.edu.vn.mssv18110326.Model.Product;
 import hcmute.edu.vn.mssv18110326.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.myViewHolder> {
@@ -41,13 +44,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.myViewHo
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, final int position) {
         final int id = allProducts.get(position).getId();
-        String price = "Giá: " + allProducts.get(position).getPrice()+"VND";
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        String price = "Giá: " + decimalFormat.format(Integer.parseInt(allProducts.get(position).getPrice()))+" VND";
         pricee = Integer.parseInt(allProducts.get(position).getPrice());
         holder.Name.setText(allProducts.get(position).getName());
         holder.Price.setText(price);
-        String img = allProducts.get(position).getImage();
+/*        String img = allProducts.get(position).getImage();
         int resourceId = mContex.getResources().getIdentifier(img, "drawable", mContex.getPackageName() );
-        holder.imgView.setImageResource( resourceId );
+        holder.imgView.setImageResource( resourceId );*/
+        Bitmap bitmap= BitmapFactory.decodeByteArray(allProducts.get(position).getImage(),0,allProducts.get(position).getImage().length);
+        holder.imgView.setImageBitmap(bitmap);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

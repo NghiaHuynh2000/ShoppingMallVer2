@@ -2,6 +2,8 @@ package hcmute.edu.vn.mssv18110326.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import hcmute.edu.vn.mssv18110326.Activity.DetailsActivity;
 import hcmute.edu.vn.mssv18110326.Model.Product;
 import hcmute.edu.vn.mssv18110326.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.myViewHolder> {
@@ -44,17 +47,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull myViewHolder holder, final int position) {
         final int id = products.get(position).getId();
         pricee= Integer.parseInt(products.get(position).getPrice());
-        String price = "Giá: " +pricee +"VND";
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        String price = "Giá: " +decimalFormat.format(pricee) +" VND";
         holder.name.setText(products.get(position).getName());
 //        holder.color.setText("Xám");
 //        holder.size.setText("S");
 //        Picasso.with(mContex)
 //                .load( products.get(position).getImage())
 //                .into(holder.imageView);
-        String img = products.get(position).getImage();
+   /*     String img = products.get(position).getImage();
         int resourceId = mContex.getResources().getIdentifier(img, "drawable", mContex.getPackageName() );
 
-        holder.imageView.setImageResource( resourceId );
+        holder.imageView.setImageResource( resourceId );*/
+        Bitmap bitmap= BitmapFactory.decodeByteArray(products.get(position).getImage(),0,products.get(position).getImage().length);
+        holder.imageView.setImageBitmap(bitmap);
+
         holder.price.setText(price);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,15 +6,28 @@ public class BillDetails {
     String name_product;
     String price;
     int quantity;
-    String image;
+    String color;
+    String size;
+    byte[] image;
 
-    public BillDetails(int id, int id_bill, String name_product, String price, int quantity, String image) {
+    public BillDetails(int id, int id_bill, String name_product, String price, int quantity, byte[] image) {
         this.id = id;
         this.id_bill = id_bill;
         this.name_product = name_product;
         this.price = price;
         this.quantity = quantity;
         this.image = image;
+    }
+
+    public BillDetails(int id, int id_bill, String name_product, String price, int quantity, byte[] image,String color, String size) {
+        this.id = id;
+        this.id_bill = id_bill;
+        this.name_product = name_product;
+        this.price = price;
+        this.quantity = quantity;
+        this.image = image;
+        this.color=color;
+        this.size=size;
     }
 
     public int getId() {
@@ -57,11 +70,19 @@ public class BillDetails {
         this.quantity = quantity;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
+
+    public String getColor(){return color;}
+
+    public void setColor(String color){this.color=color;}
+
+    public String getSize(){return size;}
+
+    public void setSize(String size){this.size=size;}
 }

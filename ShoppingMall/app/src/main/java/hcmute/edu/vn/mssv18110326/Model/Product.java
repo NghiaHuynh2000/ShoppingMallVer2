@@ -1,23 +1,36 @@
 package hcmute.edu.vn.mssv18110326.Model;
 
 import java.io.Serializable;
+import java.sql.Blob;
 
 public class Product implements Serializable {
-    int  id, id_cate, type, id_color, id_size;
+    int  id, id_cate;
     String name;
     String price;
-    String image;
+    byte[] image;
     String description;
+    int quantity;
 
 
-    public Product(int id, String name, String price, String image, int id_cate, int type, String description) {
+    public Product(int id, String name, String price, byte[] image, int id_cate, String description) {
         this.id = id;
         this.id_cate = id_cate;
-        this.type = type;
+//        this.type = type;
         this.name = name;
         this.price = price;
         this.image = image;
         this.description = description;
+    }
+
+    public Product(int id, String name, String price, byte[] image, int id_cate, String description, int quantity) {
+        this.id = id;
+        this.id_cate = id_cate;
+//        this.type = type;
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+        this.quantity=quantity;
     }
 
     public Product(String name, String price) {
@@ -41,13 +54,13 @@ public class Product implements Serializable {
         this.id_cate = id_cate;
     }
 
-    public int getType() {
+/*   public int getType() {
         return type;
     }
 
     public void setType(int type) {
         this.type = type;
-    }
+    }*/
 
     public String getName() {
         return name;
@@ -65,11 +78,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
@@ -81,5 +94,7 @@ public class Product implements Serializable {
         this.description = description;
     }
 
+    public int getQuantity(){return quantity;}
 
+    public void setQuantity(int quantity){this.quantity=quantity;}
 }

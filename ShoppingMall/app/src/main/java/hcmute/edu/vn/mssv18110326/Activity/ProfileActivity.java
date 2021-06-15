@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,10 +33,10 @@ import static android.app.Activity.RESULT_OK;
 
 
 public class ProfileActivity extends Fragment {
-    DatabaseManager db  ;
+    DatabaseManager db;
     Context thiscontext;
     TextView email,name;
-    UsersDAO usersDAO ;
+    UsersDAO usersDAO;
     Button btnLogin, btnLogout, btnChat,btnEditProfile, btnEditPassword;
 
     CircleImageView user_profile_photo;
@@ -47,11 +48,13 @@ public class ProfileActivity extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         thiscontext = container.getContext();
-        email = view.findViewById(R.id.user_email);
-        name = view.findViewById(R.id.user_namme);
-
         db = new DatabaseManager(thiscontext);
         usersDAO = new UsersDAO(db);
+        email = view.findViewById(R.id.user_email);
+        name = view.findViewById(R.id.user_namme);
+        user_profile_photo=(CircleImageView) view.findViewById(R.id.user_profile_photo);
+
+ //       usersDAO = new UsersDAO(db);
 
         btnChat = view.findViewById(R.id.btnChat);
         btnChat.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +80,17 @@ public class ProfileActivity extends Fragment {
             }
         });
         String names = GetSessionUser();
+        try {
+            usersDAO=new UsersDAO(db);
+            if (!(usersDAO.GetImageAvt(names).equals(null))) {
+                byte[] imageAvt = usersDAO.GetImageAvt(names);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(imageAvt, 0, imageAvt.length);
+                user_profile_photo.setImageBitmap(bitmap);
+            }
+        }
+        catch (Exception e){
+
+        }
 
         if(names.equals("")){
             btnLogout.setVisibility(View.GONE);
@@ -107,8 +121,6 @@ public class ProfileActivity extends Fragment {
             }
         });
 
-        user_profile_photo=(CircleImageView) view.findViewById(R.id.user_profile_photo);
-
         user_profile_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,7 +129,6 @@ public class ProfileActivity extends Fragment {
                 gallery.setAction(Intent.ACTION_GET_CONTENT);
 
                 startActivityForResult(Intent.createChooser(gallery,"Chọn hình ảnh"),PICK_IMAGE);
-
             }
         });
 
@@ -133,6 +144,11 @@ public class ProfileActivity extends Fragment {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(thiscontext.getContentResolver(),imageUri);
                 user_profile_photo.setImageBitmap(bitmap);
+
+                CircleImageView updateAvt = user_profile_photo;
+                byte[] image = usersDAO.ConverttoArrayByte(updateAvt);
+                String email = GetSessionUser();
+                usersDAO.UpdateAvt(email,image);
             }
             catch (IOException e){
                 e.printStackTrace();

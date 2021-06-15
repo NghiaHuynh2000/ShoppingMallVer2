@@ -17,6 +17,7 @@ import hcmute.edu.vn.mssv18110326.Activity.BillDetaiilsActivity;
 import hcmute.edu.vn.mssv18110326.Model.Bill;
 import hcmute.edu.vn.mssv18110326.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class OrderBill extends RecyclerView.Adapter<OrderBill.myViewHolder>{
@@ -44,8 +45,9 @@ public class OrderBill extends RecyclerView.Adapter<OrderBill.myViewHolder>{
         String price = String.valueOf(products.get(position).getTotal());
         holder.idd.setText("Hóa đơn ID: " +"#FASTSHOP"+id);
 
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
 
-        holder.total.setText("Tổng: " + price + "VND");
+        holder.total.setText("Tổng: " + decimalFormat.format(Integer.parseInt(price)) + " VND");
         holder.date.setText("Ngày: "+products.get(position).getDate());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

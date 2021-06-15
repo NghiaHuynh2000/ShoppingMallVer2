@@ -4,10 +4,6 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ic_menu_send.xml"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd4.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd4.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_fb.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\ic_fb.png"
     },
@@ -56,8 +52,8 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\quandai2.jpg"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd3.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd3.jpg"
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_hd.png.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ic_hd.png"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -68,12 +64,12 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\item_bill.xml"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_somi4.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\somi4.jpg"
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_thongke.png.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ic_thongke.png"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd10.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd10.jpg"
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_somi4.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\somi4.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_forgot.xml.flat",
@@ -92,6 +88,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\aothun4.jpg"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_nav_bottom.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\bg_nav_bottom.xml"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list_user.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\activity_list_user.xml"
     },
@@ -102,10 +102,6 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd9.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd9.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ao.xml.flat",
@@ -124,16 +120,24 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\fragment_cart.xml"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd5.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd5.jpg"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd2.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd2.jpg"
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_bill_details.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\item_bill_details.xml"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\menu_draw_main.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\menu\\draw_main.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\anim_left_to_right.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\anim\\left_to_right.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_them.png.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ic_them.png"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_admin_home.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\activity_admin_home.xml"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -164,8 +168,16 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\runningdog.json"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_line_bottom_dialog.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\line_bottom_dialog.xml"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_applestore.json.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\applestore.json"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_shet_bg.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\bottom_shet_bg.xml"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_spinner_arrow.xml.flat",
@@ -188,10 +200,6 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\aothun5.jpg"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd1.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd1.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_hddanimation.json.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\hddanimation.json"
     },
@@ -200,16 +208,12 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\activity_load_app.xml"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_year.json.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\year.json"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd9.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd9.jpg"
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_view.xml.flat",
@@ -232,10 +236,6 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\plus.png"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd6.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd6.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_receipt.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\receipt.xml"
     },
@@ -246,6 +246,10 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_register.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\layout_register.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_bottom.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\menu\\menu_bottom.xml"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_payment.xml.flat",
@@ -284,14 +288,6 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\activity_bill_details_acitivity.xml"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd7.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd7.jpg"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd3.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd3.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_quanshort2.jpg.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\quanshort2.jpg"
     },
@@ -306,6 +302,10 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_addcart.json.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\addcart.json"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_shop.png.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\icon_shop.png"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_regular.ttf.flat",
@@ -328,16 +328,20 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\quandai5.jpg"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd4.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd4.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_foreground.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_camera_alt_24.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\camera_alt_24.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\anim_right_to_left.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\anim\\right_to_left.xml"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_wall.jpg.flat",
@@ -364,6 +368,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\jeans.json"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_taikhoan.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ic_taikhoan.xml"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
@@ -378,6 +386,10 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_local_shipping_24.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ic_baseline_local_shipping_24.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\anim_exit_rtl.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\anim\\exit_rtl.xml"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_tw.png.flat",
@@ -396,16 +408,8 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd8.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd8.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd1.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd1.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -428,6 +432,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\activity_address.xml"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_add_product.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\dialog_add_product.xml"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_open_zalo.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\open_zalo.xml"
     },
@@ -438,10 +446,6 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_main.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\fragment_main.xml"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd10.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd10.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_bg_edt.xml.flat",
@@ -472,16 +476,8 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\baseline_receipt_white_18dp.png"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd2.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd2.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_bold.ttf.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\font\\roboto_bold.ttf"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd6.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd6.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_shoppingcartt.json.flat",
@@ -528,10 +524,6 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\baseline_home_white_18dp.png"
     },
     {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd8.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd8.jpg"
-    },
-    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_huyhuy1.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\huyhuy1.png"
     },
@@ -546,6 +538,10 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat_dialog.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\activity_chat_dialog.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_admin_fragment_san_pham.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\admin_fragment_san_pham.xml"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_quanshort4.jpg.flat",
@@ -572,16 +568,16 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\anim_exit_ltr.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\anim\\exit_ltr.xml"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_deliveryboy.json.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\deliveryboy.json"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_gamepadanimation.json.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\gamepadanimation.json"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hdd5.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\hdd5.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_message_24.xml.flat",
@@ -656,16 +652,16 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\somi5.jpg"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_folder_24.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\folder_24.xml"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_order.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\fragment_order.xml"
-    },
-    {
-        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ssd7.jpg.flat",
-        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\ssd7.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",

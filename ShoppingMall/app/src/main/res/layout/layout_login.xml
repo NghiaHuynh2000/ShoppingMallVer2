@@ -16,10 +16,10 @@ tools:ignore="MissingConstraints">
     android:elevation="5dp"
     android:fontFamily="sans-serif-medium"
     android:gravity="center_vertical"
-    android:paddingStart="30dp"
-    android:text="Login"
+    android:paddingStart="15dp"
+    android:text="Đăng nhập"
     android:textColor="#FFFFFF"
-    android:textSize="45dp"
+    android:textSize="35dp"
     android:textStyle="bold" />
 
 <LinearLayout
@@ -71,7 +71,7 @@ tools:ignore="MissingConstraints">
             android:layout_marginTop="15dp"
             android:background="@drawable/bg_edt"
             android:elevation="4dp"
-            android:hint="Password"
+            android:hint="Mật khẩu"
             android:inputType="textPassword"
             android:paddingStart="10dp" />
 

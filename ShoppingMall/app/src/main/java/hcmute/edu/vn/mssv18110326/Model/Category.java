@@ -3,12 +3,12 @@ package hcmute.edu.vn.mssv18110326.Model;
 public class Category {
     private  int mId;
     private String mName;
-    private String mImage;
+//    private byte[] mImage;
 
-    public Category(int mId, String mName, String mImage) {
+    public Category(int mId, String mName) {
         this.mId = mId;
         this.mName = mName;
-        this.mImage = mImage;
+//        this.mImage = mImage;
     }
 
     public int getmId() {
@@ -27,11 +27,11 @@ public class Category {
         this.mName = mName;
     }
 
-    public String getmImage() {
+/*    public byte[] getmImage() {
         return mImage;
     }
 
-    public void setmImage(String mImage) {
+    public void setmImage(byte[] mImage) {
         this.mImage = mImage;
-    }
+    }*/
 }

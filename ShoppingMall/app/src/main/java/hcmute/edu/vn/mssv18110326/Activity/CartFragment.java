@@ -3,6 +3,7 @@ package hcmute.edu.vn.mssv18110326.Activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +16,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import hcmute.edu.vn.mssv18110326.Adapter.CartRecyclerViewAdapter;
+import hcmute.edu.vn.mssv18110326.DAO.CartDAO;
 import hcmute.edu.vn.mssv18110326.Data.DatabaseManager;
 import hcmute.edu.vn.mssv18110326.Model.Cart;
 import hcmute.edu.vn.mssv18110326.R;
@@ -33,15 +38,19 @@ public class CartFragment extends Fragment {
     LinearLayout linearLayout,empty,lv1,btn;
     Context context;
     private ArrayList<Cart> ListCart;
-    DatabaseManager db = new DatabaseManager(context);
+    DatabaseManager db;
+    CartDAO cartDAO;
     Button home,payment;
-    TextView txtTotal;
+    public static TextView txtTotal;
     public static int Total = 0;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.activity_cart, container, false);
         context = container.getContext();
+        db= new DatabaseManager(context);
+        cartDAO=new CartDAO(db);
 
         linearLayout = view.findViewById(R.id.ly2);
         lv1 = view.findViewById(R.id.ly1);
@@ -63,6 +72,7 @@ public class CartFragment extends Fragment {
             Total += MainActivity.cart_main.get(i).getPrice()*MainActivity.cart_main.get(i).getQty();
         }
         DecimalFormat decimalFormat = new DecimalFormat(" ###,###,###");
+ //       model.getCurrentName().setValue(decimalFormat.format(Total) + " VND");
         txtTotal.setText(decimalFormat.format(Total) + " VND");
 
 
@@ -90,7 +100,13 @@ public class CartFragment extends Fragment {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int position = viewHolder.getAdapterPosition();
-                Total = (int) (Total - MainActivity.cart_main.get(position).getPrice());
+
+                String email_user=GetSessionUser();
+
+                cartDAO.DeleteCart(email_user,MainActivity.cart_main.get(position).getId(),MainActivity.cart_main.get(position).getColor(),MainActivity.cart_main.get(position).getSize());
+
+
+                Total = (int) (Total - (MainActivity.cart_main.get(position).getPrice()*MainActivity.cart_main.get(position).getQty()));
                 DecimalFormat decimalFormat = new DecimalFormat(" ###,###,###");
                 txtTotal.setText(decimalFormat.format(Total) + " VND");
                 MainActivity.cart_main.remove(position);
@@ -109,6 +125,7 @@ public class CartFragment extends Fragment {
             }
         });
         itemTouchHelper.attachToRecyclerView(myRecyclerView);
+
         return view;
     }
 
@@ -137,5 +154,11 @@ public class CartFragment extends Fragment {
         }
     };
 
+    public String GetSessionUser(){
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_check", Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString("user_email","");
+        return name;
+    }
 
 }

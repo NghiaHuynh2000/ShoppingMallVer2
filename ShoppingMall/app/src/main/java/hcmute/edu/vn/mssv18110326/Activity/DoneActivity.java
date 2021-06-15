@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import hcmute.edu.vn.mssv18110326.DAO.CartDAO;
+import hcmute.edu.vn.mssv18110326.DAO.ProductDAO;
 import hcmute.edu.vn.mssv18110326.Data.DatabaseManager;
 import hcmute.edu.vn.mssv18110326.Model.Bill;
 import hcmute.edu.vn.mssv18110326.Model.Details;
@@ -25,7 +27,9 @@ public class DoneActivity extends AppCompatActivity {
     String names;
     int stt;
     int id_user;
+
     DatabaseManager db = new DatabaseManager(DoneActivity.this);
+    CartDAO cartDAO= new CartDAO(db);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +48,8 @@ public class DoneActivity extends AppCompatActivity {
             }
         }
         for (int i = 0; i< MainActivity.cart_main.size(); i++){
-            Total += MainActivity.cart_main.get(i).getPrice();;
+            Total += MainActivity.cart_main.get(i).getPrice()*MainActivity.cart_main.get(i).getQty();
+            cartDAO.DeleteCart(names,MainActivity.cart_main.get(i).getId(),MainActivity.cart_main.get(i).getColor(),MainActivity.cart_main.get(i).getSize());
 
         }
         InsertBill(stt);
@@ -78,7 +83,7 @@ public class DoneActivity extends AppCompatActivity {
                 id_bill= cursor.getInt(0);
                 for (int i = 0; i< MainActivity.cart_main.size(); i++){
 
-                    Details details = new Details(id_bill, MainActivity.cart_main.get(i).getId(), MainActivity.cart_main.get(i).getQty());
+                    Details details = new Details(id_bill, MainActivity.cart_main.get(i).getId(), MainActivity.cart_main.get(i).getColor(),MainActivity.cart_main.get(i).getSize(),MainActivity.cart_main.get(i).getQty());
                     db.AddDetails(details);
                 }
                 db.UpdateTotal(id_bill,Total);
@@ -101,4 +106,5 @@ public class DoneActivity extends AppCompatActivity {
         super.onPause();
         finish();
     }
+
 }

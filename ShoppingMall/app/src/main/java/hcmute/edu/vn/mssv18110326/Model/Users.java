@@ -4,11 +4,22 @@ public class Users {
     private  int mId;
     private String mName;
     private String mEmail;
+    private String mPhone;
     private String mPassword;
     private String mAddress;
+    private byte[] mImage;
+    private int mPermission;
+    private int mActive;
 
-    public Users(String mName, String mEmail, String mPassword) {
+    public Users(String mName,String mEmail,String mPassword){
         this.mName = mName;
+        this.mEmail=mEmail;
+        this.mPassword=mPassword;
+    }
+
+    public Users(String mName, String mPhone, String mEmail, String mPassword) {
+        this.mName = mName;
+        this.mPhone=mPhone;
         this.mEmail = mEmail;
         this.mPassword = mPassword;
     }
@@ -20,11 +31,14 @@ public class Users {
         this.mPassword = mPassword;
     }
 
-    public Users(String mName, String mEmail, String mPassword,String mAddress) {
+    public Users(String mName, String mEmail, String mPassword, String mAddress, byte[] mImage, int mPermission,int mActive) {
         this.mName = mName;
         this.mEmail = mEmail;
         this.mPassword = mPassword;
         this.mAddress = mAddress;
+        this.mImage = mImage;
+        this.mPermission = mPermission;
+        this.mActive=mActive;
     }
 
     public int getmId() {
@@ -41,6 +55,14 @@ public class Users {
 
     public void setmName(String mName) {
         this.mName = mName;
+    }
+
+    public String getmPhone() {
+        return mPhone;
+    }
+
+    public void setmPhone(String mPhone) {
+        this.mPhone = mPhone;
     }
 
     public String getmEmail() {
@@ -62,4 +84,16 @@ public class Users {
     public String getmAddress(){return mAddress;}
 
     public void setmAddress(String mAddress){this.mAddress=mAddress;}
+
+    public byte[] getmImage(){return mImage;}
+
+    public void setmImage(byte[] mImage){this.mImage=mImage;}
+
+    public int getmPermission(){return mPermission;}
+
+    public void setmPermission(int mPermission){this.mPermission=mPermission;}
+
+    public int getmActive(){return mActive;}
+
+    public void setmActive(int mActive){this.mActive=mActive;}
 }

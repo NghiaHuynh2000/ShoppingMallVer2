@@ -23,6 +23,7 @@ public class RegisterAcitivity extends AppCompatActivity {
     private TextView login;
     private EditText Remail;
     private EditText Rname;
+    private EditText Rphone;
     private EditText Rpassword;
 
     DatabaseManager db = new DatabaseManager(RegisterAcitivity.this);
@@ -34,6 +35,7 @@ public class RegisterAcitivity extends AppCompatActivity {
         login = (TextView)findViewById(R.id.login);
         btnRegister = (Button)findViewById(R.id.btnRegister);
         Remail = (EditText)findViewById(R.id.email);
+        Rphone=(EditText)findViewById(R.id.phone);
         Rpassword = (EditText)findViewById(R.id.password);
         Rname = (EditText)findViewById(R.id.name);
         db.AddProduct();
@@ -47,6 +49,10 @@ public class RegisterAcitivity extends AppCompatActivity {
                 }
                 if(Remail.getText().toString().equals("")){
                     Toast.makeText(RegisterAcitivity.this, "Please enter Email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(Rphone.getText().toString().equals("")){
+                    Toast.makeText(RegisterAcitivity.this, "Please enter Phone", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(Rpassword.getText().toString().equals("")){
@@ -79,9 +85,10 @@ public class RegisterAcitivity extends AppCompatActivity {
     }
     private Users CreateUser(){
         String name = Rname.getText().toString();
+        String phone=Rphone.getText().toString();
         String password = Rpassword.getText().toString();
         String email = Remail.getText().toString();
-        Users users = new Users(name,email,password);
+        Users users = new Users(name,phone,email,password);
         return users;
     }
 }

@@ -27,9 +27,20 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim exit_ltr
+anim exit_rtl
+anim fragment_close_enter
+anim fragment_close_exit
+anim fragment_fade_enter
+anim fragment_fade_exit
+anim fragment_fast_out_extra_slow_in
+anim fragment_open_enter
+anim fragment_open_exit
+anim left_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim right_to_left
 anim trans_left_in
 anim trans_left_out
 anim trans_right_in
@@ -1709,7 +1720,9 @@ drawable baseline_storefront_white_18dp
 drawable bg_chitietdonhang
 drawable bg_edt
 drawable bg_lg1
+drawable bg_nav_bottom
 drawable bottom_line
+drawable bottom_shet_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1722,6 +1735,7 @@ drawable button_add
 drawable button_bg
 drawable button_payment
 drawable button_search
+drawable camera_alt_24
 drawable camera_beta_disable
 drawable camera_beta_enable
 drawable cancel_item
@@ -1754,18 +1768,9 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable fb_dialog_close
+drawable folder_24
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
-drawable hdd1
-drawable hdd10
-drawable hdd2
-drawable hdd3
-drawable hdd4
-drawable hdd5
-drawable hdd6
-drawable hdd7
-drawable hdd8
-drawable hdd9
 drawable huyhuy
 drawable huyhuy1
 drawable i_back2
@@ -1787,6 +1792,7 @@ drawable ic_close_web
 drawable ic_email
 drawable ic_fb
 drawable ic_gg
+drawable ic_hd
 drawable ic_id
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1805,6 +1811,9 @@ drawable ic_play_zalo
 drawable ic_play_zing
 drawable ic_protect
 drawable ic_smile
+drawable ic_taikhoan
+drawable ic_them
+drawable ic_thongke
 drawable ic_tw
 drawable ic_uncheck
 drawable ic_user
@@ -1814,6 +1823,8 @@ drawable ico_camera
 drawable ico_info
 drawable ico_info_disabled
 drawable ico_support
+drawable icon_shop
+drawable line_bottom_dialog
 drawable login_button_bk
 drawable login_shape_bk
 drawable logozalo
@@ -1877,16 +1888,6 @@ drawable somi3
 drawable somi4
 drawable somi5
 drawable spinner_arrow
-drawable ssd1
-drawable ssd10
-drawable ssd2
-drawable ssd3
-drawable ssd4
-drawable ssd5
-drawable ssd6
-drawable ssd7
-drawable ssd8
-drawable ssd9
 drawable switch_off
 drawable test_custom_background
 drawable time_bg
@@ -2085,6 +2086,7 @@ id bill
 id birthday
 id blocking
 id bottom
+id bottomSheet
 id bounce
 id btn
 id btnAdd
@@ -2100,7 +2102,9 @@ id btnPay
 id btnRegister
 id btnReturn
 id btnSearch
+id btnShowMonHoc
 id btnSub
+id btnThemSP
 id btnUpdate
 id btn_add
 id btn_cancel
@@ -2182,6 +2186,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawerLayout
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -2190,7 +2195,11 @@ id editTextEmail
 id editTextPassword
 id edit_day
 id edit_query
+id edtGiaSp
 id edtSearch
+id edtSoluong
+id edtTenSp
+id edtTimKiem
 id edt_content
 id edti_activecode
 id edti_phonenumber
@@ -2218,6 +2227,7 @@ id filled
 id first_image
 id fitToContents
 id fixed
+id flThemSp
 id flip
 id floating
 id forever
@@ -2227,6 +2237,7 @@ id form_email_container
 id form_id_container
 id form_pass_container
 id fragmentDn
+id fragment_container_view_tag
 id gateway_root
 id gender_female
 id gender_male
@@ -2245,6 +2256,7 @@ id hdd_recyclerview
 id header_cover_image
 id header_line
 id hideable
+id hoaDonFragment
 id home
 id homeAsUp
 id homepage
@@ -2261,6 +2273,8 @@ id image
 id image_chatDialog
 id image_message
 id imgAvatar
+id imvCamera
+id imvFolder
 id info
 id inputEmail
 id invisible
@@ -2273,6 +2287,7 @@ id largeLabel
 id layout
 id layout_1
 id layout_2
+id layout_big
 id layout_bigItem
 id lblSoTien
 id lblZpTransToken
@@ -2338,6 +2353,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
 id name
+id nav_bottom_bar
 id navigation_header_container
 id never
 id next
@@ -2385,6 +2401,8 @@ id progress_horizontal
 id progress_loading
 id radio
 id ratio
+id rcLoai
+id rcSanPham
 id recovery_guest
 id rectangles
 id regis_acc
@@ -2401,6 +2419,7 @@ id right_side
 id root_container
 id rounded
 id row_index_key
+id sanPhamFragment
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2439,6 +2458,7 @@ id snackbar_text
 id snap
 id snapMargins
 id software
+id spLoai
 id spacer
 id spline
 id split_action_bar
@@ -2479,6 +2499,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id taiKhoanFragment
 id take_camera
 id term
 id test_checkbox_android_button_tint
@@ -2504,6 +2525,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id thongKeFragment
 id time
 id title
 id titleDividerNoCustom
@@ -2538,6 +2560,7 @@ id tt_back_form1
 id tt_back_form_cmnd
 id tt_continue_login
 id tvColor
+id tvSanPhamHienCo
 id tvSize
 id tvlg
 id txtAddress
@@ -2581,6 +2604,7 @@ id view_offset_helper
 id view_root
 id viewpager1
 id visible
+id visible_removing_fragment_view_tag
 id warning
 id wide
 id withText
@@ -2670,6 +2694,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_address
+layout activity_admin_home
 layout activity_bill_details_acitivity
 layout activity_bill_order
 layout activity_cart
@@ -2687,6 +2712,7 @@ layout activity_loadd
 layout activity_main
 layout activity_main2
 layout activity_update_password
+layout admin_fragment_san_pham
 layout cart_item
 layout choose_account
 layout choose_account_row
@@ -2710,6 +2736,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_add_product
 layout email_guard_container
 layout fake_webview_activity
 layout fragment_ao
@@ -2719,6 +2746,7 @@ layout fragment_order
 layout fragment_profile
 layout fragment_quan
 layout item_bill
+layout item_bill_details
 layout item_view
 layout layout_login
 layout layout_register
@@ -2813,6 +2841,7 @@ layout zalosdk_videw_web_login_toolbar
 menu draw_main
 menu drawer_menu
 menu item_menu
+menu menu_bottom
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
@@ -3343,6 +3372,8 @@ style Base_Widget_MaterialComponents_Slider
 style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
 style Base_Widget_MaterialComponents_TextView
+style BottomSheetDialogTheme
+style BottomSheetStyle
 style CardView
 style CardView_Dark
 style CardView_Light
@@ -3875,6 +3906,8 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable Fragment android_name android_id android_tag
+styleable FragmentContainerView android_name android_tag
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc brightness contrast crossfade overlay round roundPercent saturation warmth

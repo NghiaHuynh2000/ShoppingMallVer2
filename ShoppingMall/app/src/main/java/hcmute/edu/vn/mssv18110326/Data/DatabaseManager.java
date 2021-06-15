@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import hcmute.edu.vn.mssv18110326.DAO.ProductDAO;
 import hcmute.edu.vn.mssv18110326.Model.Bill;
 import hcmute.edu.vn.mssv18110326.Model.Cart;
 import hcmute.edu.vn.mssv18110326.Model.Details;
@@ -23,49 +24,49 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private  static final String PHONE = "phone";
     private  static final String PASSWORD = "password";
     private static final String ADDRESS = "address";
+    private static final String IMAGE_USER = "image";
+    private static final String PERMISSION = "permission";
+    private static final String ACTIVE="active";
 
     // tạo bảng category
     private  static final String CATEGORY = "category";
     private  static  final String ID_CATE = "id";
     private  static  final String NAME_CATE = "name";
-    private  static  final String IMAGE_CATE = "image";
 
     // tạo bản sản phẩm
     private  static final String PRODUCT = "product";
     private  static  final String ID_PRO = "id";
     private  static  final String NAME_PRO = "name";
-    private  static  final String IMAGE_PRO = "image";
     private  static  final String PRICE_PRODUCT = "price";
-    private  static  final String DESC_PRO = "description";
+    private  static  final String IMAGE_PRO = "image";
     private  static  final String ID_CATEGORY = "id_cate";
-    private  static  final String TYPE_PRO = "type";
-    private static SQLiteDatabase db ;
+    private  static  final String DESC_PRO = "description";
+    private static final String QUANTITY_PRO="quantity";
 
     //cart
     private  static final String CART = "cart";
-    private  static  final String ID_CART = "id";
+    private  static  final String EMAIL_USER = "email";
     private  static  final String ID_PRODUCT = "id_product";
+    private static final String ID_COLOR_CART="id_color";
+    private static final String ID_SIZE_CART="id_size";
     private  static  final String QTY = "quantity";
-    private  static  final String NAME_PRODUCT = "name_product";
-    private  static  final String SUB_PRICE = "sub_price";
-    private  static  final String IMG = "image_pro";
 
     // tạo bản bill
     private  static final String BILL = "bill";
     private  static final String ID_BILL = "id";
     private  static final String DATE = "date";
+    private  static final String YOUR_ADDRESS = "you_address";
     private  static final String TOTAL = "total";
-    private  static final String STATUS = "status";
     private  static final String ID_USER = "id_user";
+    private  static final String STATUS = "status";
 
    // details
    private  static final String DETAILS = "details";
    private  static final String ID_DETAIL = "id";
-   private  static  final String QUANTITY = "quantity";
    private  static  final String BILL_ID = "id_bill";
-    // id_color
-    // id_size
    private  static  final String PRODUCT_ID = "id_product";
+   private  static  final String QUANTITY = "quantity";
+
 
    // color
     private static final String COLOR = "color";
@@ -77,11 +78,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final String ID_SIZE = "id_size";
     private static final String NAME_SIZE = "name";
 
-
-
-
-   private  static final String YOUR_ADDRESS = "you_address";
-
     private final Context context;
 
     public DatabaseManager( Context context) {
@@ -92,31 +88,34 @@ public class DatabaseManager extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        String SQLQuery = "CREATE TABLE " + USER + " (" + ID + " integer primary  key AUTOINCREMENT , " +
+        String SQLQueryUser = "CREATE TABLE " + USER + " (" + ID + " integer primary  key AUTOINCREMENT , " +
                 NAME + " TEXT, " +
                 EMAIL + " TEXT, " +
                 PHONE + " TEXT, " +
                 PASSWORD + " TEXT, " +
-                ADDRESS+ " TEXT) ";
+                ADDRESS + " TEXT, " +
+                IMAGE_USER + " BLOB, " +
+                PERMISSION + " integer, " +
+                ACTIVE + " integer) ";
 
         String SQLQueryCategory = "CREATE TABLE " + CATEGORY + " (" + ID_CATE + " integer primary  key AUTOINCREMENT , " +
-                NAME_CATE + " TEXT, " +
-                IMAGE_CATE + " TEXT ) ";
+                NAME_CATE + " TEXT)";
 
         String SQLQueryProduct = "CREATE TABLE " + PRODUCT + " (" + ID_PRO + " integer primary  key AUTOINCREMENT , " +
                 NAME_PRO + " TEXT, " +
                 PRICE_PRODUCT + " integer, " +
-                IMAGE_PRO + " TEXT, " +
+                IMAGE_PRO + " BLOB, " +
                 ID_CATEGORY + " integer , " +
-                TYPE_PRO + " integer , " +
-                DESC_PRO + " TEXT ) ";
+                DESC_PRO + " TEXT, " +
+                QUANTITY_PRO + " integer ) ";
 
-        String SQLQueryCart = "CREATE TABLE " + CART + " (" + ID_CART + " integer primary  key AUTOINCREMENT , " +
-                ID_PRODUCT + " integer , " +
-                NAME_PRODUCT + " TEXT, " +
-                IMG + " TEXT, " +
+        String SQLQueryCart = "CREATE TABLE " + CART + " (" +
+                EMAIL_USER + " TEXT, " +
+                ID_PRODUCT + " integer, " +
+                ID_COLOR_CART + " integer, " +
+                ID_SIZE_CART + " integer, " +
                 QTY + " integer, " +
-                SUB_PRICE + " integer ) ";
+                "PRIMARY key(" + EMAIL_USER+", "+ID_PRODUCT+", "+ID_COLOR_CART+", "+ID_SIZE_CART+"))";
 
         String SQLQueryBill = "CREATE TABLE " + BILL + " (" + ID_BILL + " integer primary  key AUTOINCREMENT , " +
                 DATE + " TEXT , " +
@@ -141,10 +140,10 @@ public class DatabaseManager extends SQLiteOpenHelper {
         String SQLQuerySize = "CREATE TABLE " + SIZE + " (" + ID_SIZE + " integer primary  key AUTOINCREMENT , " +
                 NAME_SIZE + " TEXT ) ";
 
-       // sqLiteDatabase.execSQL(SQLQueryCart);
-        sqLiteDatabase.execSQL(SQLQuery);
+        sqLiteDatabase.execSQL(SQLQueryUser);
         sqLiteDatabase.execSQL(SQLQueryCategory);
         sqLiteDatabase.execSQL(SQLQueryProduct);
+        sqLiteDatabase.execSQL(SQLQueryCart);
         sqLiteDatabase.execSQL(SQLQueryBill);
         sqLiteDatabase.execSQL(SQLQueryColor);
         sqLiteDatabase.execSQL(SQLQuerySize);
@@ -175,6 +174,16 @@ public class DatabaseManager extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SqlSize3);
         sqLiteDatabase.execSQL(SqlSize4);
         sqLiteDatabase.execSQL(SqlSize5);
+
+
+        // Add Category
+        String SqlCate1="insert into category(name) values ('Áo')";
+        String SqlCate2="insert into category(name) values ('Quần')";
+        String SqlCate3="insert into category(name) values ('Phụ kiện')";
+
+        sqLiteDatabase.execSQL(SqlCate1);
+        sqLiteDatabase.execSQL(SqlCate2);
+        sqLiteDatabase.execSQL(SqlCate3);
     }
 
     @Override
@@ -200,10 +209,10 @@ public class DatabaseManager extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ID_PRODUCT, cart.getId());
-        values.put(NAME_PRODUCT, cart.getName());
+//        values.put(NAME_PRODUCT, cart.getName());
         values.put(QTY, cart.getQty());
-        values.put(SUB_PRICE, cart.getPrice());
-        values.put(IMG, cart.getImage());
+//        values.put(SUB_PRICE, cart.getPrice());
+//        values.put(IMG, cart.getImage());
         db.insert(CART,null,values);
         db.close();
     }
@@ -213,68 +222,49 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public void AddProduct(){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String Sql1 = " insert into product (name,image,price,description,id_cate,type) values ('Áo thun con mèo','aothun1',150000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        ProductDAO productDAO= new ProductDAO(this,context);
 
-        String Sql2 = " insert into product (name,image,price,description,id_cate,type) values ('Áo thun đen trơn ','aothun2',120000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Áo thun con mèo",150000,"aothun1",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql3 = " insert into product (name,image,price,description,id_cate,type) values ('Áo thun trắng trơn ','aothun3',120000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Áo thun đen trơn",120000,"aothun2",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql4 = " insert into product (name,image,price,description,id_cate,type) values ('Áo Thun Off White ĐEN AT8630A ','aothun4',180000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Áo thun trắng trơn",120000,"aothun3",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql5 = " insert into product (name,image,price,description,id_cate,type) values ('NAM UT Doraemon Áo Thun Ngắn Tay ','aothun5',150000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Áo Thun Off Đen",180000,"aothun4",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql6 = " insert into product (name,image,price,description,id_cate,type) values ('Áo Sơ mi Lụa Tay Ngắn Trơn Basic ','somi1',280000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("NAM UI Áo Thun Ngắn Tay",150000,"aothun5",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng thun mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql7 = " insert into product (name,image,price,description,id_cate,type) values ('Áo Sơ Mi Thom Browne Grosgrain Armbands ','somi2',310000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Áo Sơ mi Lụa Tay Ngắn Trơn Basic",280000,"somi1",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql8 = " insert into product (name,image,price,description,id_cate,type) values ('Sơ Mi Tay Dài Đơn Giản M24 ','somi3',350000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Áo Sơ Mi Thom Browne Grosgrain Armbands",310000,"somi2",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql9 = " insert into product (name,image,price,description,id_cate,type) values ('Sơ Mi Tay Dài Đơn Giản N01 ','somi4',360000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Sơ Mi Tay Dài Đơn Giản M24",350000,"somi3",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
-        String Sql10 = " insert into product (name,image,price,description,id_cate,type) values ('Sơ Mi Tay Dài Đơn Giản M22 ','somi5',320000,'- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.',1,1)";
+        productDAO.AddProductImgString("Sơ Mi Tay Dài Đơn Giản N01",360000,"somi4",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
+
+        productDAO.AddProductImgString("Sơ Mi Tay Dài Đơn Giản M22",320000,"somi5",1,"- In ấn với công nghệ tốt nhất.\n- Chất lượng vải mịn, giặt không nhăn.\n- Màu sắc đẹp hài hòa, không bay màu, không nhăn.\n- Sản phẩm với thiết kế ưu chuộng nhất hiện nay.\n- Được người tiêu dùng lựa chọn nhiều nhất.\n- Mẫu mã đa dạng, dễ dàng chọn lựa.");
 
 //----------------------------------------------------------------------------------------------------------------
 
-        String Sql11 = " insert into product (name,image,price,description,id_cate,type) values ('Quần Short Dị Biệt M2 ','quanshort1',320000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm liền được chọn là những sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("Quần Short Dị Biệt M2",320000,"quanshort1",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm liền được chọn là những sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql12 = " insert into product (name,image,price,description,id_cate,type) values ('Quần Short Đơn Giản Y Nguyên Bản M3 ','quanshort2',340000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("Quần Short Đơn Giản Y Nguyên Bản M3",340000,"quanshort2",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm liền được chọn là những sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql13 = " insert into product (name,image,price,description,id_cate,type) values ('Quần Short Đơn Giản B2KM01 ','quanshort3',310000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("Quần Short Đơn Giản B2KM01",310000,"quanshort3",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm liền được chọn là những sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql14 = " insert into product (name,image,price,description,id_cate,type) values ('[SOO04] SHT Quần Short Đặc Biệt B1ST13 ','quanshort4',330000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("[SOO04] SHT Quần Short Đặc Biệt B1ST13",390000,"quanshort4",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm liền được chọn là những sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql15 = " insert into product (name,image,price,description,id_cate,type) values ('[SOO04] Quần Short Đặc Biệt C02 ','quanshort5',390000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("[SOO04] Quần Short Đặc Biệt C02",390000,"quanshort5",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm liền được chọn là những sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql16 = " insert into product (name,image,price,description,id_cate,type) values ('Quần Dài Tây Đơn Giản HG09 ','quandai1',450000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("Quần Dài Tây Đơn Giản HG09",450000,"quandai1",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql17 = " insert into product (name,image,price,description,id_cate,type) values ('Quần Dài Jogger Đặc Biệt Drama Ver1 ','quandai2',460000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("Quần Dài Jogger Đặc Biệt Drama Ver1",460000,"quandai2",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql18 = " insert into product (name,image,price,description,id_cate,type) values ('[SOO04] SHT Quần Dài Jogger Đặc Biệt A02 ','quandai3',430000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("[SOO04] SHT Quần Dài Jogger Đặc Biệt A02",430000,"quandai3",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql19 = " insert into product (name,image,price,description,id_cate,type) values ('[SOO04] Quần Dài Jogger Đặc Biệt G02 ','quandai4',490000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
+        productDAO.AddProductImgString("[SOO04] Quần Dài Jogger Đặc Biệt G02",490000,"quandai4",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
-        String Sql20 = " insert into product (name,image,price,description,id_cate,type) values ('[SOO04] Quần Dài Jogger Đặc Biệt E03 ','quandai5',450000,'- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.',2,2)";
-
-        db.execSQL(Sql1);
-        db.execSQL(Sql2);
-        db.execSQL(Sql3);
-        db.execSQL(Sql4);
-        db.execSQL(Sql5);
-        db.execSQL(Sql6);
-        db.execSQL(Sql7);
-        db.execSQL(Sql8);
-        db.execSQL(Sql9);
-        db.execSQL(Sql10);
-        db.execSQL(Sql11);
-        db.execSQL(Sql12);
-        db.execSQL(Sql13);
-        db.execSQL(Sql14);
-        db.execSQL(Sql15);
-        db.execSQL(Sql16);
-        db.execSQL(Sql17);
-        db.execSQL(Sql18);
-        db.execSQL(Sql19);
-        db.execSQL(Sql20);
+        productDAO.AddProductImgString("[SOO04] Quần Dài Jogger Đặc Biệt E03",450000,"quandai5",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
     }
 
@@ -297,8 +287,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(BILL_ID, details.getId_bill());
         values.put(PRODUCT_ID, details.getId_product());
-        values.put(ID_COLOR,1);
-        values.put(ID_SIZE,1);
+        values.put(ID_COLOR,GetID_Color(details.getColor()));
+        values.put(ID_SIZE,GetID_Size(details.getSize()));
         values.put(QUANTITY, details.getQuantity());
         db.insert(DETAILS,null,values);
         db.close();
@@ -316,7 +306,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
     public Cursor GetDetailsBill(int id_bill){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery( "select details.id, details.id_bill, product.name, product.price, details.quantity, product.image from details, product where details.id_product == product.id and details.id_bill = ?",new String[]{String.valueOf(id_bill)});
+        Cursor cursor = db.rawQuery( "select details.id, details.id_bill, product.name, product.price, details.quantity, product.image,details.id_color,details.id_size from details, product where details.id_product == product.id and details.id_bill = ?",new String[]{String.valueOf(id_bill)});
         return  cursor;
     }
     //////////////////////////////////////////////////////////
@@ -383,9 +373,21 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public int GetID_Color(String name){
-        int id_color=0;
+    public void UpdateProfile(String name, String phone, String emailNew, String address,String emailOld){
         SQLiteDatabase db = this.getWritableDatabase();
+        String updateProfile="update users set name=\""+name+"\" , email=\""+emailNew+"\" , phone=\""+phone+"\" , address=\""+address+"\" where email=\""+emailOld+"\"";
+        db.execSQL(updateProfile);
+    }
+
+    public void UpdatePassword(String email, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String updatePassword = "update users set password=\""+password+"\" where email=\""+email+"\"";
+        db.execSQL(updatePassword);
+    }
+
+    public int GetID_Color(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        int id_color=0;
         Cursor cursor = db.rawQuery("select * from color where name=?",new String[]{name});
         cursor.moveToFirst();
         while(!cursor.isAfterLast()) {
@@ -405,41 +407,5 @@ public class DatabaseManager extends SQLiteOpenHelper {
             cursor.moveToNext();
         }
         return id_size;
-    }
-
-    public String Get_NameColor(int id_color){
-        String name_color="";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from color where id_color=?",new String[]{String.valueOf(id_color)});
-        cursor.moveToFirst();
-        while(!cursor.isAfterLast()) {
-            name_color=cursor.getString(1);
-            cursor.moveToNext();
-        }
-        return name_color;
-    }
-
-    public String Get_NameSize(int id_size){
-        String name_size="";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from size where id_size=?",new String[]{String.valueOf(id_size)});
-        cursor.moveToFirst();
-        while(!cursor.isAfterLast()) {
-            name_size=cursor.getString(1);
-            cursor.moveToNext();
-        }
-        return name_size;
-    }
-
-    public void UpdateProfile(String name, String phone, String emailNew, String address,String emailOld){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String updateProfile="update users set name=\""+name+"\" , email=\""+emailNew+"\" , phone=\""+phone+"\" , address=\""+address+"\" where email=\""+emailOld+"\"";
-        db.execSQL(updateProfile);
-    }
-
-    public void UpdatePassword(String email, String password){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String updatePassword = "update users set password=\""+password+"\" where email=\""+email+"\"";
-        db.execSQL(updatePassword);
     }
 }

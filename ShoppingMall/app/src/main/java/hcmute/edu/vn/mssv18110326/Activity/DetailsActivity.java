@@ -3,8 +3,11 @@ package hcmute.edu.vn.mssv18110326.Activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -21,11 +24,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import hcmute.edu.vn.mssv18110326.DAO.CartDAO;
 import hcmute.edu.vn.mssv18110326.DAO.ProductDAO;
 import hcmute.edu.vn.mssv18110326.Data.DatabaseManager;
 import hcmute.edu.vn.mssv18110326.Model.Cart;
 import hcmute.edu.vn.mssv18110326.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +38,8 @@ public class DetailsActivity extends AppCompatActivity {
 
     Integer id, quantity,id_pro, newprice,pricee, itemcart;
     TextView txtid, price,description;
-    String name,img, test;
+    String name, test;
+    byte[] img;
     ImageView image;
     Spinner color;
     Spinner size;
@@ -43,6 +49,7 @@ public class DetailsActivity extends AppCompatActivity {
     private ArrayList<Cart> ListCarts;
     DatabaseManager db = new DatabaseManager(this);
     ProductDAO productDAO = new ProductDAO(db);
+    CartDAO cartDAO= new CartDAO(db);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,17 +78,20 @@ public class DetailsActivity extends AppCompatActivity {
 
             if(cursor.getCount()!=0){
                 if(cursor.moveToFirst()) {
-                    String txt = cursor.getString(2) + "VND";
+                    DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+                    String txt = decimalFormat.format(Integer.parseInt(cursor.getString(2))) + " VND";
                     id_pro = cursor.getInt(0);
                     txtid.setText(name);
                     price.setText(txt);
                     pricee = Integer.parseInt(cursor.getString(2));
-                    description.setText(cursor.getString(6));
+                    description.setText(cursor.getString(5));
                     Resources res = getResources();
-                    img = cursor.getString(3);
+                    img = cursor.getBlob(3);
 
-                    int resourceId = getResources().getIdentifier(img, "drawable", getPackageName() );
-                    image.setImageResource( resourceId );
+  //                  int resourceId = getResources().getIdentifier(img, "drawable", getPackageName() );
+  //                  image.setImageResource( resourceId );
+                    Bitmap bitmap= BitmapFactory.decodeByteArray(img,0,img.length);
+                    image.setImageBitmap(bitmap);
                 }
             }
 
@@ -120,22 +130,28 @@ public class DetailsActivity extends AppCompatActivity {
     }
     private View.OnClickListener AddToCart = new View.OnClickListener() {
         public void onClick(View v) {
+            String email_user= GetSessionUser();
             if(MainActivity.cart_main.size()>0){
                 boolean exists = false;
                 for(int i =0; i< MainActivity.cart_main.size(); i++){
                     if(MainActivity.cart_main.get(i).getId() == id){
                         MainActivity.cart_main.get(i).setQty(MainActivity.cart_main.get(i).getQty() + 1);
-                        MainActivity.cart_main.get(i).setPrice(pricee * MainActivity.cart_main.get(i).getQty());
+                        cartDAO.UpdateCart(email_user,id,color.getSelectedItem().toString(),size.getSelectedItem().toString(),MainActivity.cart_main.get(i).getQty());
+   //                     MainActivity.cart_main.get(i).setPrice(pricee * MainActivity.cart_main.get(i).getQty());
                         exists = true;
                     }
                 }
                 if (exists  == false){
                     MainActivity.cart_main.add(new Cart(id,name,pricee,img,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1));
+                    cartDAO.AddCart(email_user,id,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1);
                 }
             }else {
                 MainActivity.cart_main.add(new Cart(id,name,pricee,img,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1));
+                cartDAO.AddCart(email_user,id,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1);
             }
-            Toast.makeText(getApplicationContext(), name + " Added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), name + " đã thêm!", Toast.LENGTH_SHORT).show();
+
+
 
             Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
             startActivity(intent);
@@ -151,5 +167,12 @@ public class DetailsActivity extends AppCompatActivity {
         Intent intent = new Intent(DetailsActivity.this, CartFragment.class);
         finish();
         startActivity(intent);
+    }
+
+    public String GetSessionUser(){
+
+        SharedPreferences sharedPreferences = this.getApplicationContext().getSharedPreferences("user_check", Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString("user_email","");
+        return name;
     }
 }
