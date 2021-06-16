@@ -34,7 +34,7 @@ public class QuanFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_quan, container, false);
         context = container.getContext();
-        myRecyclerView =  view.findViewById(R.id.hdd_recyclerview);
+        myRecyclerView =  view.findViewById(R.id.quan_recyclerview);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,ProductList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);
@@ -49,7 +49,7 @@ public class QuanFragment extends Fragment {
         super.onCreate(savedInstanceState);
         ProductList = new ArrayList<>();
 
-        Cursor cursor = new DatabaseManager(getContext()).GetHDD();
+        Cursor cursor = new DatabaseManager(getContext()).GetQuan();
 
         if (cursor != null & cursor.moveToFirst()){
             do {

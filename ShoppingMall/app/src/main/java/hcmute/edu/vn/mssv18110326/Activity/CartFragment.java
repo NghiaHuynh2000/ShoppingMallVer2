@@ -52,6 +52,13 @@ public class CartFragment extends Fragment {
         db= new DatabaseManager(context);
         cartDAO=new CartDAO(db);
 
+        String email=GetSessionUser();
+
+        if(!(email.isEmpty())){
+            MainActivity.cart_main=cartDAO.GetCart(email);
+        }
+
+
         linearLayout = view.findViewById(R.id.ly2);
         lv1 = view.findViewById(R.id.ly1);
         btn = view.findViewById(R.id.btn);
@@ -103,8 +110,9 @@ public class CartFragment extends Fragment {
 
                 String email_user=GetSessionUser();
 
-                cartDAO.DeleteCart(email_user,MainActivity.cart_main.get(position).getId(),MainActivity.cart_main.get(position).getColor(),MainActivity.cart_main.get(position).getSize());
-
+                if(!(email_user.isEmpty())) {
+                    cartDAO.DeleteCart(email_user, MainActivity.cart_main.get(position).getId(), MainActivity.cart_main.get(position).getColor(), MainActivity.cart_main.get(position).getSize());
+                }
 
                 Total = (int) (Total - (MainActivity.cart_main.get(position).getPrice()*MainActivity.cart_main.get(position).getQty()));
                 DecimalFormat decimalFormat = new DecimalFormat(" ###,###,###");
@@ -146,11 +154,19 @@ public class CartFragment extends Fragment {
         @Override
         public void onClick(View v) {
             if(MainActivity.cart_main.size()<=0){
-                Toast.makeText(context,"Cart Is Empty!",Toast.LENGTH_LONG).show();
+                Toast.makeText(context,"Giỏ hàng trống!",Toast.LENGTH_LONG).show();
                 return;
             }
+            String email_user=GetSessionUser();
+            if(email_user.isEmpty()){
+                Toast.makeText(context,"Đăng nhập để thanh toán!",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, LoginActivity.class);
+                startActivity(intent);
+            }
+            else {
             Intent intent = new Intent(context, PaymentActivity.class);
             startActivity(intent);
+            }
         }
     };
 

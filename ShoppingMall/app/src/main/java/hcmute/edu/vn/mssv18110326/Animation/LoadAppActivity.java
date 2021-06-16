@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import hcmute.edu.vn.mssv18110326.Activity.LoginActivity;
+import hcmute.edu.vn.mssv18110326.Activity.MainActivity;
 import hcmute.edu.vn.mssv18110326.R;
 
 public class LoadAppActivity extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class LoadAppActivity extends AppCompatActivity {
                 }
                 finally
                 {
-                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);;
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);;
                     startActivity(intent);
                 }
             }

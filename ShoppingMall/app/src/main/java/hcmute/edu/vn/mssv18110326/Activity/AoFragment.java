@@ -34,7 +34,7 @@ public class AoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ao, container, false);
         context = container.getContext();
 
-        myRecyclerView =  view.findViewById(R.id.ssd_recyclerview);
+        myRecyclerView =  view.findViewById(R.id.ao_recyclerview);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,ProductList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);
@@ -48,7 +48,7 @@ public class AoFragment extends Fragment {
         super.onCreate(savedInstanceState);
         ProductList = new ArrayList<>();
 
-        Cursor cursor = new DatabaseManager(getContext()).GetSSD();
+        Cursor cursor = new DatabaseManager(getContext()).GetAo();
 
         if (cursor != null & cursor.moveToFirst()){
             do {

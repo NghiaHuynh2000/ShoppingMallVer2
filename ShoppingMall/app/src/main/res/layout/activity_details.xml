@@ -13,66 +13,123 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/TxtName"
-            android:layout_margin="10dp"
-            android:textColor="#00AC47"
-            android:text="Áo thun con mèo"
-            android:layout_width="wrap_content"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content">
-        </TextView>
-
         <ImageView
             android:id="@+id/ImgDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
             android:src="@drawable/aothun1">
 
         </ImageView>
+
+        <TextView
+            android:id="@+id/TxtName"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="#000"
+            android:text="Áo thun con mèo"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content">
+        </TextView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:id="@+id/txtColor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Màu sắc"
-                android:textSize="16dp"
-                />
-            <Spinner
-                android:id="@+id/spnColor"
-                android:layout_marginStart="10dp"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                />
-
-            <TextView
-                android:id="@+id/txtSize"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kích cỡ"
-                android:textSize="16dp"
-                />
-            <Spinner
-                android:id="@+id/spnSize"
-                android:layout_marginStart="10dp"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                />
+            android:layout_marginTop="25dp">
             <RelativeLayout
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/lrlColor"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/txtColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Màu sắc"
+                        android:textSize="16dp"
+                        />
+                    <Spinner
+                        android:id="@+id/spnColor"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_toRightOf="@+id/lrlColor"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtSize"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Kích cỡ"
+                        android:textSize="16dp" />
+
+                    <Spinner
+                        android:id="@+id/spnSize"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:includeFontPadding="false"
+                    android:text="Mô tả sản phẩm"
+
+                    android:textColor="#0640B5"
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:textSize="15dp"
+                    android:text="Xịn xò nhất Vịnh bắc bộ\n Màu hơi nhạt nha"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="120dp">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="5dp"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -94,14 +151,16 @@
                     android:textColor="#000"
                     android:textStyle="bold"
                     android:textSize="27dp"
-                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </TextView>
             </RelativeLayout>
 
             <Button
                 android:id="@+id/AddCart"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="Thêm vào giỏ"
@@ -112,40 +171,6 @@
                 android:textStyle="bold"
                 android:layout_height="wrap_content">
             </Button>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
-                android:orientation="vertical">
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
-                    android:includeFontPadding="false"
-                    android:text="Mô tả sản phẩm"
-
-                    android:textColor="#0640B5"
-                    android:textSize="20sp">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/description"
-                    android:layout_width="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:textSize="15dp"
-                    android:text="Xịn xò nhất Vịnh bắc bộ\n Màu hơi nhạt nha"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="wrap_content">
-
-                </TextView>
-
-            </LinearLayout>
 
         </LinearLayout>
 

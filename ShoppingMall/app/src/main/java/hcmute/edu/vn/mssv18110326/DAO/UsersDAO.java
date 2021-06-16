@@ -82,9 +82,6 @@ public class UsersDAO {
             image= cursor.getBlob(6);
             cursor.moveToNext();
         }
-        if(image==null) {
-            int a = 1;
-        }
         return image;
     }
 

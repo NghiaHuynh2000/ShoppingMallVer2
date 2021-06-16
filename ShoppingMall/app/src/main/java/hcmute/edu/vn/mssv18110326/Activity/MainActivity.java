@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         viewpager= findViewById(R.id.viewpager1);
         bottomNavigationView = findViewById(R.id.bottom);
-        viewpagerAdapter viewpagerAdapter = new viewpagerAdapter(getSupportFragmentManager(),FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewpagerAdapter viewpagerAdapter = new viewpagerAdapter(getSupportFragmentManager(),FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,this);
         viewpager.setAdapter(viewpagerAdapter);
         viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -81,12 +82,25 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.cart:
                         viewpager.setCurrentItem(2);
                         break;
-                    case R.id.bill:
+                    case R.id.bill: {
+                        String name= GetSessionUser();
+                        if(name.isEmpty()){
+                            openLoginWithBill();
+                            break;
+                        }
                         viewpager.setCurrentItem(3);
                         break;
+                    }
                     case R.id.profile:
+                    {
+                        String name= GetSessionUser();
+                        if(name.isEmpty()){
+                            openLoginWithProfile();
+                            break;
+                        }
                         viewpager.setCurrentItem(4);
                         break;
+                    }
                     default:
                         viewpager.setCurrentItem(0);
                         break;
@@ -122,6 +136,21 @@ public class MainActivity extends AppCompatActivity {
         editor.remove("user_email");
         editor.apply();
         finish();
+    }
+
+    public void openLogin(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void openLoginWithProfile(){
+        Toast.makeText(this,"Đăng nhập để xem Thông tin cá nhân!", Toast.LENGTH_LONG).show();
+        openLogin();
+    }
+
+    public void openLoginWithBill(){
+        Toast.makeText(this,"Đăng nhập để xem Hóa đơn!", Toast.LENGTH_LONG).show();
+        openLogin();
     }
 
 

@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,15 +34,14 @@ import static android.app.Activity.RESULT_OK;
 
 
 public class ProfileActivity extends Fragment {
-    DatabaseManager db;
     Context thiscontext;
+    DatabaseManager db;
     TextView email,name;
     UsersDAO usersDAO;
     Button btnLogin, btnLogout, btnChat,btnEditProfile, btnEditPassword;
 
     CircleImageView user_profile_photo;
     private static final int PICK_IMAGE=1;
-    Uri imageUri;
 
     @Nullable
     @Override
@@ -81,8 +81,9 @@ public class ProfileActivity extends Fragment {
         });
         String names = GetSessionUser();
         try {
-            usersDAO=new UsersDAO(db);
+//            usersDAO=new UsersDAO(db);
             if (!(usersDAO.GetImageAvt(names).equals(null))) {
+
                 byte[] imageAvt = usersDAO.GetImageAvt(names);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(imageAvt, 0, imageAvt.length);
                 user_profile_photo.setImageBitmap(bitmap);
@@ -91,6 +92,7 @@ public class ProfileActivity extends Fragment {
         catch (Exception e){
 
         }
+
 
         if(names.equals("")){
             btnLogout.setVisibility(View.GONE);
@@ -140,6 +142,7 @@ public class ProfileActivity extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == PICK_IMAGE && resultCode == RESULT_OK){
+            Uri imageUri;
             imageUri = data.getData();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(thiscontext.getContentResolver(),imageUri);
@@ -148,7 +151,8 @@ public class ProfileActivity extends Fragment {
                 CircleImageView updateAvt = user_profile_photo;
                 byte[] image = usersDAO.ConverttoArrayByte(updateAvt);
                 String email = GetSessionUser();
-                usersDAO.UpdateAvt(email,image);
+                usersDAO.UpdateAvt(email, image);
+                Toast.makeText(thiscontext,"Cập nhật ảnh thành công!", Toast.LENGTH_LONG).show();
             }
             catch (IOException e){
                 e.printStackTrace();
@@ -167,7 +171,7 @@ public class ProfileActivity extends Fragment {
         startActivity(intent);
     }
     public void  Logout(){
-        Intent intent = new Intent(getContext(), LoginActivity.class);
+        Intent intent = new Intent(getContext(), MainActivity.class);
         startActivity(intent);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("user_check", Context.MODE_PRIVATE);
         SharedPreferences.Editor  editor =sharedPreferences.edit();

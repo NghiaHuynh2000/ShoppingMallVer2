@@ -104,6 +104,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_vi1.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\vi1.jpg"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ao.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\fragment_ao.xml"
     },
@@ -122,6 +126,10 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_bill_details.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\item_bill_details.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_vi.json.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\vi.json"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\menu_draw_main.xml.flat",
@@ -180,6 +188,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\bottom_shet_bg.xml"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_phu_kien.xml.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\fragment_phu_kien.xml"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_spinner_arrow.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\spinner_arrow.xml"
     },
@@ -216,6 +228,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_fall.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\fall.jpg"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_view.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\item_view.xml"
     },
@@ -246,6 +262,10 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_register.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\layout_register.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_non1.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\non1.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_bottom.xml.flat",
@@ -328,6 +348,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\quandai5.jpg"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_vi3.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\vi3.jpg"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
@@ -358,6 +382,10 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable_time_bg.xml.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable\\time_bg.xml"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_non3.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\non3.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -504,6 +532,10 @@
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\layout\\activity_bill_order.xml"
     },
     {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_vi2.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\vi2.jpg"
+    },
+    {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\raw_trousers.json.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\raw\\trousers.json"
     },
@@ -586,6 +618,14 @@
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_quandai4.jpg.flat",
         "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\quandai4.jpg"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_tat.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\tat.jpg"
+    },
+    {
+        "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_non2.jpg.flat",
+        "source": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\src\\main\\res\\drawable-v24\\non2.jpg"
     },
     {
         "merged": "D:\\LapTrinhDiDong\\ShoppingMall\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",

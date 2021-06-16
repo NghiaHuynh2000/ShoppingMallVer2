@@ -9,7 +9,7 @@ public class Users {
     private String mAddress;
     private byte[] mImage;
     private int mPermission;
-    private int mActive;
+    private int mStatus;
 
     public Users(String mName,String mEmail,String mPassword){
         this.mName = mName;
@@ -31,14 +31,14 @@ public class Users {
         this.mPassword = mPassword;
     }
 
-    public Users(String mName, String mEmail, String mPassword, String mAddress, byte[] mImage, int mPermission,int mActive) {
+    public Users(String mName, String mEmail, String mPassword, String mAddress, byte[] mImage, int mPermission,int mStatus) {
         this.mName = mName;
         this.mEmail = mEmail;
         this.mPassword = mPassword;
         this.mAddress = mAddress;
         this.mImage = mImage;
         this.mPermission = mPermission;
-        this.mActive=mActive;
+        this.mStatus=mStatus;
     }
 
     public int getmId() {
@@ -93,7 +93,7 @@ public class Users {
 
     public void setmPermission(int mPermission){this.mPermission=mPermission;}
 
-    public int getmActive(){return mActive;}
+    public int getmStatus(){return mStatus;}
 
-    public void setmActive(int mActive){this.mActive=mActive;}
+    public void setmStatus(int mStatus){this.mStatus=mStatus;}
 }

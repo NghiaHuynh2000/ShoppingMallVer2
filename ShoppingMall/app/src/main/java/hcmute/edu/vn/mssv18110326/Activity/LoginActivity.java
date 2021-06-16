@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import hcmute.edu.vn.mssv18110326.DAO.CartDAO;
 import hcmute.edu.vn.mssv18110326.DAO.UsersDAO;
 import hcmute.edu.vn.mssv18110326.Data.DatabaseManager;
+import hcmute.edu.vn.mssv18110326.Model.Cart;
 import hcmute.edu.vn.mssv18110326.Model.Users;
 import hcmute.edu.vn.mssv18110326.R;
 
@@ -25,6 +26,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+
+import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email ;
@@ -79,9 +82,34 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("user_email", name);
                     editor.apply();
                     Login();
+                    if(!(MainActivity.cart_main.isEmpty())){
+
+                        ArrayList<Cart> cartCurrent=MainActivity.cart_main;
+
+                        ArrayList<Cart> cartData=cartDAO.GetCart(name);
+
+
+
+                        for(int i=0;i<cartCurrent.size();i++) {
+
+                            boolean checkCart=false;
+
+                            for (int position = 0; position < cartData.size(); position++) {
+
+                                if (cartData.get(position).getId() == cartCurrent.get(i).getId()) {
+                                        cartDAO.UpdateCart(name, cartCurrent.get(i).getId(), cartCurrent.get(i).getColor(), cartCurrent.get(i).getSize(), cartCurrent.get(i).getQty()+cartData.get(position).getQty());
+                                        checkCart=true;
+                                }
+                            }
+                            if(checkCart==false){
+                                cartDAO.AddCart(name, cartCurrent.get(i).getId(), cartCurrent.get(i).getColor(), cartCurrent.get(i).getSize(), cartCurrent.get(i).getQty());
+                            }
+
+                        }
+
+                    }
                     MainActivity.cart_main=cartDAO.GetCart(name);
- //                   int a=1;
-                    //db.AddProduct();
+
                 }
                 else
                     Toast.makeText(LoginActivity.this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();

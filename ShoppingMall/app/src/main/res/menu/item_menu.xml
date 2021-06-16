@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homepage"
-        android:title="Home"
+        android:title="Trang chủ"
         android:icon="@drawable/baseline_home_white_18dp"/>
 
     <item
         android:id="@+id/shop"
-        android:title="Shop"
+        android:title="Cửa hàng"
         android:icon="@drawable/baseline_storefront_white_18dp"/>
     <item
         android:id="@+id/cart"
-        android:title="Cart"
+        android:title="Giỏ hàng"
         android:icon="@drawable/baseline_shopping_cart_white_18dp"/>
     <item
         android:id="@+id/bill"
-        android:title="Bill"
+        android:title="Hóa đơn"
         android:icon="@drawable/baseline_receipt_white_18dp"/>
     <item
         android:id="@+id/profile"
-        android:title="Profile"
+        android:title="Tài khoản"
         android:icon="@drawable/baseline_person_pin_white_18dp"/>
 </menu>

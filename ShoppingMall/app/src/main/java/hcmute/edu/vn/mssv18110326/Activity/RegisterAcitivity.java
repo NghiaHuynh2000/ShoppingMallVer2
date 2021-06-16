@@ -44,30 +44,30 @@ public class RegisterAcitivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(Rname.getText().toString().equals("")){
-                    Toast.makeText(RegisterAcitivity.this, "Please enter name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterAcitivity.this, "Hãy nhập tên!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(Remail.getText().toString().equals("")){
-                    Toast.makeText(RegisterAcitivity.this, "Please enter Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterAcitivity.this, "Hãy nhập email!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(Rphone.getText().toString().equals("")){
-                    Toast.makeText(RegisterAcitivity.this, "Please enter Phone", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterAcitivity.this, "Hãy nhập số điện thoại!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(Rpassword.getText().toString().equals("")){
-                    Toast.makeText(RegisterAcitivity.this, "Please enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterAcitivity.this, "Hãy nhập mật khẩu!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 boolean checkemail = db.checkmail(Remail.getText().toString());
                 if(checkemail == true){
                     Users users = CreateUser();
                     user.addUsers(users);
-                    Toast.makeText(RegisterAcitivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterAcitivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                 }
-                else Toast.makeText(RegisterAcitivity.this, "Email is exist", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(RegisterAcitivity.this, "Email đã tồn tại!", Toast.LENGTH_SHORT).show();
 
 
             }

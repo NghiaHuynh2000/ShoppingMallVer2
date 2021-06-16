@@ -89,7 +89,9 @@ public class CartRecyclerViewAdapter  extends  RecyclerView.Adapter<CartRecycler
                     notifyDataSetChanged();
 
                     String email=GetSessionUser();
-                    cartDAO.UpdateCart(email,MainActivity.cart_main.get(position).getId(),MainActivity.cart_main.get(position).getColor(),MainActivity.cart_main.get(position).getSize(),MainActivity.cart_main.get(position).getQty());
+                    if(!(email.isEmpty())) {
+                        cartDAO.UpdateCart(email, MainActivity.cart_main.get(position).getId(), MainActivity.cart_main.get(position).getColor(), MainActivity.cart_main.get(position).getSize(), MainActivity.cart_main.get(position).getQty());
+                    }
 //                    DetailsActivity detailsActivity=new DetailsActivity();
 //                    detailsActivity.Restart();
                 }
@@ -107,7 +109,9 @@ public class CartRecyclerViewAdapter  extends  RecyclerView.Adapter<CartRecycler
                 notifyDataSetChanged();
 
                 String email=GetSessionUser();
-                cartDAO.UpdateCart(email,MainActivity.cart_main.get(position).getId(),MainActivity.cart_main.get(position).getColor(),MainActivity.cart_main.get(position).getSize(),MainActivity.cart_main.get(position).getQty());
+                if(!(email.isEmpty())) {
+                    cartDAO.UpdateCart(email, MainActivity.cart_main.get(position).getId(), MainActivity.cart_main.get(position).getColor(), MainActivity.cart_main.get(position).getSize(), MainActivity.cart_main.get(position).getQty());
+                }
 //                holder.total.
 //                DetailsActivity detailsActivity=new DetailsActivity();
 //                detailsActivity.Restart();

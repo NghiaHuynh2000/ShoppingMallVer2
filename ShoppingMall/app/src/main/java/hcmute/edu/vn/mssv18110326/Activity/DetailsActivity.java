@@ -136,18 +136,24 @@ public class DetailsActivity extends AppCompatActivity {
                 for(int i =0; i< MainActivity.cart_main.size(); i++){
                     if(MainActivity.cart_main.get(i).getId() == id){
                         MainActivity.cart_main.get(i).setQty(MainActivity.cart_main.get(i).getQty() + 1);
-                        cartDAO.UpdateCart(email_user,id,color.getSelectedItem().toString(),size.getSelectedItem().toString(),MainActivity.cart_main.get(i).getQty());
-   //                     MainActivity.cart_main.get(i).setPrice(pricee * MainActivity.cart_main.get(i).getQty());
+                        if(!(email_user.isEmpty())) {
+                            cartDAO.UpdateCart(email_user, id, color.getSelectedItem().toString(), size.getSelectedItem().toString(), MainActivity.cart_main.get(i).getQty());
+                            //                     MainActivity.cart_main.get(i).setPrice(pricee * MainActivity.cart_main.get(i).getQty());
+                        }
                         exists = true;
                     }
                 }
                 if (exists  == false){
                     MainActivity.cart_main.add(new Cart(id,name,pricee,img,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1));
-                    cartDAO.AddCart(email_user,id,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1);
+                    if(!(email_user.isEmpty())) {
+                        cartDAO.AddCart(email_user, id, color.getSelectedItem().toString(), size.getSelectedItem().toString(), 1);
+                    }
                 }
             }else {
                 MainActivity.cart_main.add(new Cart(id,name,pricee,img,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1));
-                cartDAO.AddCart(email_user,id,color.getSelectedItem().toString(),size.getSelectedItem().toString(),1);
+                if(!(email_user.isEmpty())) {
+                    cartDAO.AddCart(email_user, id, color.getSelectedItem().toString(), size.getSelectedItem().toString(), 1);
+                }
             }
             Toast.makeText(getApplicationContext(), name + " đã thêm!", Toast.LENGTH_SHORT).show();
 

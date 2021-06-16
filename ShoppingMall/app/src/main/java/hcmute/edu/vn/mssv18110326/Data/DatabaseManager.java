@@ -26,7 +26,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final String ADDRESS = "address";
     private static final String IMAGE_USER = "image";
     private static final String PERMISSION = "permission";
-    private static final String ACTIVE="active";
+    private static final String STATUS_USER="status";
 
     // tạo bảng category
     private  static final String CATEGORY = "category";
@@ -96,7 +96,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 ADDRESS + " TEXT, " +
                 IMAGE_USER + " BLOB, " +
                 PERMISSION + " integer, " +
-                ACTIVE + " integer) ";
+                STATUS_USER + " integer) ";
 
         String SQLQueryCategory = "CREATE TABLE " + CATEGORY + " (" + ID_CATE + " integer primary  key AUTOINCREMENT , " +
                 NAME_CATE + " TEXT)";
@@ -266,6 +266,20 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         productDAO.AddProductImgString("[SOO04] Quần Dài Jogger Đặc Biệt E03",450000,"quandai5",2,"- Thiết kế thời trang, phù hợp cho giới trẻ.\n- Sản phẩm với chất lượng cao.\n- Khả năng độ bền và màu sắc rất tốt.\n- Nhiều năm được chọn là sản phẩm ưa chuộng.\n- Đứng đầu trong ngành sản xuất về chất lượng cao.");
 
+//----------------------------------------------------------------------------------------------------------------
+        productDAO.AddProductImgString("PKTT Vớ Đơn Giản V02",19000,"tat",3,"- Thiết kế nhỏ gọn, ưu việt, đơn giản.\n- Độ co giãn và thoát mát hàng đầu Việt Nam.\n- Nhiều năm liền được chọn là sản phẩm ưu chuộng nhất.\n- Đứng đầu trong ngành sản xuất và chất lượng cao.");
+
+        productDAO.AddProductImgString("PKTT Nón 12VAHDT",140000,"non1",3,"- Thiết kế nhỏ gọn, ưu việt, đơn giản.\n- Độ co giãn và thoát mát hàng đầu Việt Nam.\n- Nhiều năm liền được chọn là sản phẩm ưu chuộng nhất.\n- Đứng đầu trong ngành sản xuất và chất lượng cao.");
+
+        productDAO.AddProductImgString("PKTT Nón Đơn Giản A21",120000,"non2",3,"- Thiết kế nhỏ gọn, ưu việt, đơn giản.\n- Độ co giãn và thoát mát hàng đầu Việt Nam.\n- Nhiều năm liền được chọn là sản phẩm ưu chuộng nhất.\n- Đứng đầu trong ngành sản xuất và chất lượng cao.");
+
+        productDAO.AddProductImgString("PKTT Nón Ngân Hà 4 Element",140000,"non3",3,"- Thiết kế nhỏ gọn, ưu việt, đơn giản.\n- Độ co giãn và thoát mát hàng đầu Việt Nam.\n- Nhiều năm liền được chọn là sản phẩm ưu chuộng nhất.\n- Đứng đầu trong ngành sản xuất và chất lượng cao.");
+
+        productDAO.AddProductImgString("PKTT Ví Đơn Giản V14",285000,"vi1",3,"- Thiết kế nhỏ gon, tinh tế.\n- Màu sắc hài hòa trang nhã.\n- Được nhiều người dùng lựa chọn.\n- Được chọn là sẵn phẩm ưu thích nhất.\n- Đa dạng, tiện lợi và dễ dàng.");
+
+        productDAO.AddProductImgString("PKTT Ví Đơn Giản V07",285000,"vi2",3,"- Thiết kế nhỏ gon, tinh tế.\n- Màu sắc hài hòa trang nhã.\n- Được nhiều người dùng lựa chọn.\n- Được chọn là sẵn phẩm ưu thích nhất.\n- Đa dạng, tiện lợi và dễ dàng.");
+
+        productDAO.AddProductImgString("PKTT Ví Đơn Giản V05",285000,"vi3",3,"- Thiết kế nhỏ gon, tinh tế.\n- Màu sắc hài hòa trang nhã.\n- Được nhiều người dùng lựa chọn.\n- Được chọn là sẵn phẩm ưu thích nhất.\n- Đa dạng, tiện lợi và dễ dàng.");
     }
 
     public void AddBill(Bill bill){
@@ -342,7 +356,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor GetSSD(){
+    public Cursor GetAo(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery( "select * from product where id_cate = 1",null);
         return  cursor;
@@ -354,9 +368,16 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return  cursor;
 
     }
-    public Cursor GetHDD(){
+    public Cursor GetQuan(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery( "select * from product where id_cate = 2",null);
+        return  cursor;
+
+    }
+
+    public Cursor GetPhuKien(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery( "select * from product where id_cate = 3",null);
         return  cursor;
 
     }

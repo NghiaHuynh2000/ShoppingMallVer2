@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 
+import hcmute.edu.vn.mssv18110326.Activity.PhuKienFragment;
 import hcmute.edu.vn.mssv18110326.Activity.QuanFragment;
 import hcmute.edu.vn.mssv18110326.Activity.AoFragment;
 
@@ -24,7 +25,8 @@ public class ShopViewAdapter extends FragmentStatePagerAdapter {
                 return new AoFragment();
             case 1:
                 return new QuanFragment();
-
+            case 2:
+                return new PhuKienFragment();
             default:
                 return new AoFragment();
         }
@@ -34,7 +36,7 @@ public class ShopViewAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount()
     {
-        return 2;
+        return 3;
     }
 
     @Nullable
@@ -45,6 +47,8 @@ public class ShopViewAdapter extends FragmentStatePagerAdapter {
                 return "Áo Chất";
             case 1:
                 return "Quần Xịn";
+            case 2:
+                return "Phụ Kiện";
             default:
                 return "Áo Chất";
         }

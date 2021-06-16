@@ -40,7 +40,7 @@
         android:layout_height="0dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ssd_recyclerview"
+            android:id="@+id/ao_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

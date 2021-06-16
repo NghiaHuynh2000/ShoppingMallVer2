@@ -1767,6 +1767,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable fall
 drawable fb_dialog_close
 drawable folder_24
 drawable googleg_disabled_color_18
@@ -1847,6 +1848,9 @@ drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
 drawable negative
+drawable non1
+drawable non2
+drawable non3
 drawable normal_state
 drawable notification_action_background
 drawable notification_bg
@@ -1889,6 +1893,7 @@ drawable somi4
 drawable somi5
 drawable spinner_arrow
 drawable switch_off
+drawable tat
 drawable test_custom_background
 drawable time_bg
 drawable tooltip_arrow_down
@@ -1900,6 +1905,9 @@ drawable tooltip_frame_light
 drawable tooltip_top_frame
 drawable tooltip_top_frame_b
 drawable transparent
+drawable vi1
+drawable vi2
+drawable vi3
 drawable wall
 drawable zalo_regis_rounded
 drawable zalopay1
@@ -2067,6 +2075,7 @@ id all
 id always
 id animateToEnd
 id animateToStart
+id ao_recyclerview
 id asConfigured
 id async
 id auto
@@ -2310,6 +2319,7 @@ id login_form
 id logo
 id logout
 id lottie_layer_name
+id lrlColor
 id lstChatDialogs
 id lstUsers
 id ly1
@@ -2399,6 +2409,7 @@ id profile_layout
 id progress_circular
 id progress_horizontal
 id progress_loading
+id quan_recyclerview
 id radio
 id ratio
 id rcLoai
@@ -2471,7 +2482,6 @@ id src_atop
 id src_in
 id src_over
 id ssd
-id ssd_recyclerview
 id standard
 id start
 id startHorizontal
@@ -2743,6 +2753,7 @@ layout fragment_ao
 layout fragment_cart
 layout fragment_main
 layout fragment_order
+layout fragment_phu_kien
 layout fragment_profile
 layout fragment_quan
 layout item_bill
@@ -2868,6 +2879,7 @@ raw shirt
 raw shoppingcartt
 raw success
 raw trousers
+raw vi
 raw year
 string Dangky
 string Login
